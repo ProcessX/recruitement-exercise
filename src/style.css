@@ -272,44 +272,19 @@ html {
   color: #d8d8d8;
 }
 
-.singleBlock .singleInfo {
-  font-size: 27.37575px;
-  font-weight: 700;
-  color: #768890;
+.campaign__info {
+  display: grid;
 }
-
-.identifierBlock .campaign__name {
-  font-size: 31.4821125px;
-  margin-bottom: 1rem;
-  color: #768890;
-}
-.identifierBlock .campaign__id {
-  font-size: 1rem;
-  font-weight: 600;
+.campaign__info .title {
+  font-size: 36.204429375px;
   color: #d8d8d8;
 }
 
 @media (min-width: 768px) {
-  .identifierBlock {
+  .campaign__info .title {
     grid-column: 1/-1;
   }
-}
-@media (min-width: 960px) {
-  .identifierBlock {
-    grid-column: 1/4;
-  }
-}
-.campaign__info__section {
-  display: grid;
-}
-
-@media (min-width: 768px) {
-  .campaign__info__section .title {
-    grid-column: 1/-1;
-    font-size: 36.204429375px;
-    color: #d8d8d8;
-  }
-  .campaign__info__section .campaign__info {
+  .campaign__info .info__content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 1rem;
@@ -317,7 +292,7 @@ html {
   }
 }
 @media (min-width: 960px) {
-  .campaign__info__section .campaign__info {
+  .campaign__info .info__content {
     grid-template-columns: repeat(4, 1fr);
   }
 }

@@ -3,11 +3,9 @@ import React from "react";
 // eslint-disable-next-line react/prop-types
 const CampaignInfoSection = ({ children, classname, title }) => {
   return (
-    <section
-      className={`campaign__info__section campaign__info__section${classname}`}
-    >
-      <h2 className={"title title--infoSection"}>{title}</h2>
-      <div className={"campaign__info"}>{children}</div>
+    <section className={`campaign__info campaign__info--${classname}`}>
+      <h2 className={"title title--campaignInfo"}>{title}</h2>
+      <div className={"info__content"}>{children}</div>
     </section>
   );
 };
