@@ -1,12 +1,12 @@
 import React, { Fragment, useEffect, useState } from "react";
 import BtnBack from "../../btn/BtnBack";
-import CampaignInfoSection from "../../campaignInfoSection/CampaignInfoSection";
-import IdentifiersBlock from "../../campaignInfoSection/IdentifiersBlock";
-import SingleBlock from "../../campaignInfoSection/SingleBlock";
-import SlotsBlock from "../../campaignInfoSection/SlotsBlock";
-import TargetsBlock from "../../campaignInfoSection/TargetsBlock";
-import ViewsDetailBlock from "../../campaignInfoSection/ViewsDetailBlock";
+import CampaignInfoGeneral from "../../campaignInfo/CampaignInfoGeneral";
+import CampaignInfoSection from "../../campaignInfo/CampaignInfo";
+import SingleBlock from "../../campaignInfo/SingleBlock";
+import SlotsBlock from "../../campaignInfo/SlotsBlock";
+import ViewsDetailBlock from "../../campaignInfo/ViewsDetailBlock";
 import MainPageLayout from "../mainPageLayout/MainPageLayout";
+import CampaignInfoStats from "../../campaignInfo/CampaignInfoStats";
 
 const CampaignDetails = () => {
   const [campaign, setCampaign] = useState({});
@@ -36,50 +36,15 @@ const CampaignDetails = () => {
     } else {
       return (
         <Fragment>
-          {renderGeneral()}
-          {renderStats()}
+          <CampaignInfoGeneral campaign={campaign} />
+          <CampaignInfoStats
+            views={campaign.statistics.views}
+            clicks={campaign.statistics.clicks}
+          />
           {renderDiffusion()}
         </Fragment>
       );
     }
-  };
-
-  const renderGeneral = () => {
-    /**
-     * TODO : Adapt the budget so it displays the logo of the currency.
-     */
-    let campaignBudget = campaign.details.budget.value;
-    return (
-      <CampaignInfoSection title={"General"}>
-        <IdentifiersBlock>
-          <h4 className={"campaign__name"}>{campaign.details.name}</h4>
-          <p className={"campaign__id"}>{campaign.id.value}</p>
-          <div className={"info"}>
-            <SingleBlock title={"Status"} value={campaign.details.status} />
-            <SingleBlock title={"Source"} value={campaign.details.source} />
-            <SingleBlock title={"Budget"} value={campaignBudget} />
-          </div>
-        </IdentifiersBlock>
-        <TargetsBlock />
-      </CampaignInfoSection>
-    );
-  };
-
-  const renderStats = () => {
-    let campaignViews = campaign.statistics.views;
-    let campaignExpectedViews = getViewsTotal(
-      Object.values(campaignViews.expected.counts)
-    );
-    let campaignClicks = campaign.statistics.clicks;
-    return (
-      <CampaignInfoSection title={"Stats"}>
-        <SingleBlock title={"Expected views"} value={campaignExpectedViews} />
-        <SingleBlock title={"Real views"} value={"value"} />
-        <SingleBlock title={"Unique visitors"} value={campaignClicks.unique} />
-        <SingleBlock title={"Visitor total"} value={campaignClicks.count} />
-        <ViewsDetailBlock />
-      </CampaignInfoSection>
-    );
   };
 
   const renderDiffusion = () => {

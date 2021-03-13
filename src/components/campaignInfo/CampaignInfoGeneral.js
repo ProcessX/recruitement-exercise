@@ -1,0 +1,28 @@
+import React from "react";
+import CampaignInfoSection from "./CampaignInfo";
+import IdentifiersBlock from "./IdentifiersBlock";
+import SingleBlock from "./SingleBlock";
+import TargetsBlock from "./TargetsBlock";
+
+const CampaignInfoGeneral = ({ campaign }) => {
+  const getCampaignBudget = () => {
+    return "Budget";
+  };
+
+  return (
+    <CampaignInfoSection title={"General"} classname={"general"}>
+      <IdentifiersBlock>
+        <h4 className={"campaign__name"}>{campaign.details.name}</h4>
+        <p className={"campaign__id"}>{campaign.id.value}</p>
+        <div className={"info"}>
+          <SingleBlock title={"Status"} value={campaign.details.status} />
+          <SingleBlock title={"Source"} value={campaign.details.source} />
+          <SingleBlock title={"Budget"} value={getCampaignBudget()} />
+        </div>
+      </IdentifiersBlock>
+      <TargetsBlock />
+    </CampaignInfoSection>
+  );
+};
+
+export default CampaignInfoGeneral;
