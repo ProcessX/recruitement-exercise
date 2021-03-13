@@ -1,0 +1,20 @@
+@use '../../lib/mixin';
+@use '../../lib/fonts';
+
+.mainPageLayout {
+    .mainPageLayout__content {
+        min-height: 100vh;
+        margin: 0 1rem;
+    }
+}
+
+@include mixin.desktop {
+    .mainPageLayout {
+        display: flex;
+
+        .mainPageLayout__content {
+            flex-grow: 1;
+            max-height: 100vh;
+        }
+    }
+}

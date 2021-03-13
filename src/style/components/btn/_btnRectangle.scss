@@ -1,0 +1,18 @@
+@use '../../lib/colors';
+@use '../../lib/fonts';
+@use '../../lib/mixin';
+
+.btn.btn--rectangle{
+    background-color: gray;
+    height: 2.5rem;
+    padding: 0 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 0.25rem;
+    border: none;
+
+    &:hover{
+        background-color: black;
+        color: white;
+    }
+}

@@ -1,0 +1,24 @@
+@use '../../lib/colors';
+@use '../../lib/fonts';
+@use '../../lib/mixin';
+@use './infoBlock';
+
+.campaign__info__section {
+    background-color: #0000ff;
+    display: grid;
+}
+
+@include mixin.tablet {
+    .campaign__info__section {
+        background-color: #0000ff;
+
+        .title {
+            grid-column: 1/-1;
+        }
+
+        .campaign__info {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+        }
+    }
+}
