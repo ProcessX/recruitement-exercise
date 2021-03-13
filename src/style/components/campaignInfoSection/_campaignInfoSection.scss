@@ -2,23 +2,37 @@
 @use '../../lib/fonts';
 @use '../../lib/mixin';
 @use './infoBlock';
+@use './singleBlock';
+@use './identifiersBlock';
 
 .campaign__info__section {
-    background-color: #0000ff;
-    display: grid;
+  display: grid;
 }
 
 @include mixin.tablet {
-    .campaign__info__section {
-        background-color: #0000ff;
-
-        .title {
-            grid-column: 1/-1;
-        }
-
-        .campaign__info {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-        }
+  .campaign__info__section {
+    .title {
+      grid-column: 1/-1;
+      font-size: fonts.$font-size-6;
+      color: colors.$gray-2;
     }
+
+    .campaign__info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 1rem;
+      column-gap: 1rem;
+    }
+  }
+}
+
+@include mixin.tablet-large {
+  .campaign__info__section {
+    .title {
+    }
+
+    .campaign__info {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }

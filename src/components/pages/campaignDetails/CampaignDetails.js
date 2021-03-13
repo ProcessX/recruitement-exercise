@@ -85,10 +85,8 @@ const CampaignDetails = () => {
   const renderDiffusion = () => {
     return (
       <CampaignInfoSection title={"Diffusion"}>
-        <div className={"diffusion__dates"}>
-          <SingleBlock title={"From"} value={"value"} />
-          <SingleBlock title={"To"} value={"value"} />
-        </div>
+        <SingleBlock title={"From"} value={"value"} />
+        <SingleBlock title={"To"} value={"value"} />
         <SlotsBlock />
       </CampaignInfoSection>
     );

@@ -1,0 +1,29 @@
+@use '../../lib/colors';
+@use '../../lib/fonts';
+@use '../../lib/mixin';
+
+.identifierBlock {
+  .campaign__name {
+    font-size: fonts.$font-size-5;
+    margin-bottom: 1rem;
+    color: colors.$gray-3;
+  }
+
+  .campaign__id {
+    font-size: 1rem;
+    font-weight: 600;
+    color: colors.$gray-2;
+  }
+}
+
+@include mixin.tablet {
+  .identifierBlock {
+    grid-column: 1/-1;
+  }
+}
+
+@include mixin.tablet-large {
+  .identifierBlock {
+    grid-column: 1/4;
+  }
+}
