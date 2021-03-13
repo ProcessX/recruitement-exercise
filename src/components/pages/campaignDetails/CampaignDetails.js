@@ -17,14 +17,12 @@ const CampaignDetails = () => {
 
   useEffect(() => {
     if (Object.keys(campaign).length === 0 && campaign.constructor === Object) {
-      console.log(campaign);
       let urlParams = new URLSearchParams(window.location.search);
       fetchCampaign(urlParams.get("id"));
     }
   }, [campaign]);
 
   const fetchCampaign = (campaignID) => {
-    console.log(`${APIURL}${campaignID}`);
     fetch(`${APIURL}${campaignID}`)
       .then((r) => r.json())
       .then((result) => {
@@ -48,15 +46,19 @@ const CampaignDetails = () => {
   };
 
   const renderGeneral = () => {
+    /**
+     * TODO : Adapt the budget so it displays the logo of the currency.
+     */
+    let campaignBudget = campaign.details.budget.value;
     return (
       <CampaignInfoSection title={"General"}>
         <IdentifiersBlock>
-          <h4 className={"campaign__name"}>Test</h4>
-          <p className={"campaign__id"}>id</p>
+          <h4 className={"campaign__name"}>{campaign.details.name}</h4>
+          <p className={"campaign__id"}>{campaign.id.value}</p>
           <div className={"info"}>
-            <SingleBlock title={"Status"} value={"value"} />
-            <SingleBlock title={"Source"} value={"value"} />
-            <SingleBlock title={"Budget"} value={"value"} />
+            <SingleBlock title={"Status"} value={campaign.details.status} />
+            <SingleBlock title={"Source"} value={campaign.details.source} />
+            <SingleBlock title={"Budget"} value={campaignBudget} />
           </div>
         </IdentifiersBlock>
         <TargetsBlock />
@@ -65,12 +67,17 @@ const CampaignDetails = () => {
   };
 
   const renderStats = () => {
+    let campaignViews = campaign.statistics.views;
+    let campaignExpectedViews = getViewsTotal(
+      Object.values(campaignViews.expected.counts)
+    );
+    let campaignClicks = campaign.statistics.clicks;
     return (
       <CampaignInfoSection title={"Stats"}>
-        <SingleBlock title={"Expected views"} value={"value"} />
+        <SingleBlock title={"Expected views"} value={campaignExpectedViews} />
         <SingleBlock title={"Real views"} value={"value"} />
-        <SingleBlock title={"Unique visitors"} value={"value"} />
-        <SingleBlock title={"Visitor total"} value={"value"} />
+        <SingleBlock title={"Unique visitors"} value={campaignClicks.unique} />
+        <SingleBlock title={"Visitor total"} value={campaignClicks.count} />
         <ViewsDetailBlock />
       </CampaignInfoSection>
     );
@@ -86,6 +93,12 @@ const CampaignDetails = () => {
         <SlotsBlock />
       </CampaignInfoSection>
     );
+  };
+
+  const getViewsTotal = (counts) => {
+    return counts.reduce((a, val) => {
+      return a + val;
+    });
   };
 
   return (
