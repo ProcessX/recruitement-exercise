@@ -6,75 +6,75 @@ $thumbnail-border-thickness: 2px;
 $thumbnail-padding: 1rem;
 
 .campaignThumbnail {
-    display: block;
-    position: relative;
-    background-color: red;
-    border-radius: 0.5rem;
-    border: solid $thumbnail-border-thickness red;
-    padding: $thumbnail-padding;
-    text-decoration: none;
+  display: block;
+  position: relative;
+  background-color: red;
+  border-radius: 0.5rem;
+  border: solid $thumbnail-border-thickness red;
+  padding: $thumbnail-padding;
+  text-decoration: none;
 
-    * {
-        margin: 0;
-    }
+  * {
+    margin: 0;
+  }
 
-    .campaign__status {
-        background-color: gray;
-        padding: 0.25rem 1rem;
-        display: inline-block;
-        border-radius: 1rem;
-    }
+  .campaign__status {
+    background-color: gray;
+    padding: 0.25rem 1rem;
+    display: inline-block;
+    border-radius: 1rem;
+  }
 
-    .campaign__name {
-    }
+  .campaign__name {
+  }
 
-    .campaign__id {
-        font-size: fonts.$font-size-m1;
-    }
+  .campaign__id {
+    font-size: fonts.$font-size-m1;
+  }
 
-    .thumbnail__options {
-    }
+  .thumbnail__options {
+  }
 
-    &:hover {
-        border-color: black;
-    }
+  &:hover {
+    border-color: black;
+  }
 }
 
 @include mixin.smaller-than-desktop {
-    .campaignThumbnail {
-        .thumbnail__options {
-            position: absolute;
-            right: $thumbnail-padding;
-            top: $thumbnail-padding;
-        }
+  .campaignThumbnail {
+    .thumbnail__options {
+      position: absolute;
+      right: $thumbnail-padding;
+      top: $thumbnail-padding;
     }
+  }
 }
 
 @include mixin.desktop {
-    .campaignThumbnail {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: auto;
-        align-items: center;
+  .campaignThumbnail {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    align-items: center;
 
-        * {
-            grid-row: 1/2;
-        }
-
-        .campaign__status {
-            grid-column: 3/4;
-        }
-
-        .campaign__name {
-            grid-column: 1/2;
-        }
-
-        .campaign__id {
-            grid-column: 2/3;
-        }
-
-        .thumbnail__options {
-            grid-column: -1/-2;
-        }
+    * {
+      grid-row: 1/2;
     }
+
+    .campaign__status {
+      grid-column: 3/4;
+    }
+
+    .campaign__name {
+      grid-column: 1/2;
+    }
+
+    .campaign__id {
+      grid-column: 2/3;
+    }
+
+    .thumbnail__options {
+      grid-column: -1/-2;
+    }
+  }
 }

@@ -8,6 +8,8 @@ html {
   display: flex;
   flex-direction: column;
   justify-items: center;
+  position: relative;
+  z-index: 1000;
 }
 
 .navbar__menu .tab__li {
@@ -91,18 +93,26 @@ html {
     background-color: gray;
   }
 }
-.mainPageLayout .mainPageLayout__content {
+.mainPageLayout .mainPageLayout__page {
   min-height: 100vh;
-  margin: 0 1rem;
+  width: 100%;
+  background-color: #f5f6f8;
+}
+.mainPageLayout .mainPageLayout__page .page__content {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1000px;
 }
 
 @media (min-width: 1260px) {
   .mainPageLayout {
     display: flex;
   }
-  .mainPageLayout .mainPageLayout__content {
+  .mainPageLayout .mainPageLayout__page {
     flex-grow: 1;
     max-height: 100vh;
+    overflow-y: scroll;
+    justify-self: center;
   }
 }
 .campaignListing .campaignListing__head::after {
