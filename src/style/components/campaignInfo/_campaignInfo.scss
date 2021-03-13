@@ -2,6 +2,9 @@
 @use '../../lib/fonts';
 @use '../../lib/mixin';
 @use './infoBlocks/infoBlock';
+@use './infoBlocks/singleBlock';
+@use './campaignInfoGeneral';
+@use './campaignInfoStats';
 
 .campaign__info {
   display: grid;

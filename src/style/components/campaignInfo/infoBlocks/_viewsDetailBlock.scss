@@ -1,0 +1,12 @@
+@use '../../../lib/colors';
+@use '../../../lib/fonts';
+@use '../../../lib/mixin';
+
+.viewsDetailBlock {
+}
+
+@include mixin.tablet {
+  .viewsDetailBlock {
+    grid-column: 1/-1;
+  }
+}
