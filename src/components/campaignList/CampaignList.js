@@ -1,42 +1,22 @@
-import React from 'react'
-import CampaignThumbnail from './CampaignThumbnail'
-import PropTypes from 'prop-types'
+import React from "react";
+import CampaignThumbnail from "./CampaignThumbnail";
 
 const CampaignList = ({ list }) => {
-    const renderList = () => {
-        //return <ul> {list.map((campaign) => {<li key={campaign.id}>Campaign</li>})} </ul>
-        {
-            console.log(list)
-        }
-        return (
-            <ul className={'campaignThumbnail__li'}>
-                <li className={'campaignThumbnail__el'}>
-                    <CampaignThumbnail />
-                </li>
-            </ul>
-        )
-    }
-
+  const renderList = () => {
     return (
-        <div className={'campaignList'}>
-            CampaignList
-            {renderList()}
-            <ul className={'campaignThumbnail__li'}>
-                <li className={'campaignThumbnail__el'}>
-                    <CampaignThumbnail />
-                </li>
-                <li className={'campaignThumbnail__el'}>
-                    <CampaignThumbnail />
-                </li>
-                <li className={'campaignThumbnail__el'}>
-                    <CampaignThumbnail />
-                </li>
-                <li className={'campaignThumbnail__el'}>
-                    <CampaignThumbnail />
-                </li>
-            </ul>
-        </div>
-    )
-}
+      <ul className={"campaignThumbnail__li"}>
+        {list.map((campaign) => {
+          return (
+            <li key={campaign.id.value} className={"campaignThumbnail__el"}>
+              <CampaignThumbnail campaign={campaign} />
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
 
-export default CampaignList
+  return <div className={"campaignList"}>{renderList()}</div>;
+};
+
+export default CampaignList;
