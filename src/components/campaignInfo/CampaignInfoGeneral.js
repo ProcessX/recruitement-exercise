@@ -1,8 +1,8 @@
 import React from "react";
 import CampaignInfoSection from "./CampaignInfo";
-import IdentifiersBlock from "./IdentifiersBlock";
-import SingleBlock from "./SingleBlock";
-import TargetsBlock from "./TargetsBlock";
+import IdentifiersBlock from "./infoBlocks/IdentifiersBlock";
+import SingleBlock from "./infoBlocks/SingleBlock";
+import TargetsBlock from "./infoBlocks/TargetsBlock";
 
 const CampaignInfoGeneral = ({ campaign }) => {
   const getCampaignBudget = () => {

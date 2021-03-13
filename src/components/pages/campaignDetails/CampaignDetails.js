@@ -1,12 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import BtnBack from "../../btn/BtnBack";
-import CampaignInfoGeneral from "../../campaignInfo/CampaignInfoGeneral";
-import CampaignInfoSection from "../../campaignInfo/CampaignInfo";
-import SingleBlock from "../../campaignInfo/SingleBlock";
-import SlotsBlock from "../../campaignInfo/SlotsBlock";
-import ViewsDetailBlock from "../../campaignInfo/ViewsDetailBlock";
 import MainPageLayout from "../mainPageLayout/MainPageLayout";
+import CampaignInfoGeneral from "../../campaignInfo/CampaignInfoGeneral";
 import CampaignInfoStats from "../../campaignInfo/CampaignInfoStats";
+import CampaignInfoDiffusion from "../../campaignInfo/CampaignInfoDiffusion";
 
 const CampaignDetails = () => {
   const [campaign, setCampaign] = useState({});
@@ -26,7 +23,6 @@ const CampaignDetails = () => {
       .then((r) => r.json())
       .then((result) => {
         setCampaign(result);
-        console.log(result);
       });
   };
 
@@ -41,26 +37,10 @@ const CampaignDetails = () => {
             views={campaign.statistics.views}
             clicks={campaign.statistics.clicks}
           />
-          {renderDiffusion()}
+          <CampaignInfoDiffusion diffusion={campaign.diffusion} />
         </Fragment>
       );
     }
-  };
-
-  const renderDiffusion = () => {
-    return (
-      <CampaignInfoSection title={"Diffusion"}>
-        <SingleBlock title={"From"} value={"value"} />
-        <SingleBlock title={"To"} value={"value"} />
-        <SlotsBlock />
-      </CampaignInfoSection>
-    );
-  };
-
-  const getViewsTotal = (counts) => {
-    return counts.reduce((a, val) => {
-      return a + val;
-    });
   };
 
   return (

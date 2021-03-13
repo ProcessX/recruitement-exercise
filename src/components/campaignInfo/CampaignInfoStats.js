@@ -1,7 +1,7 @@
 import React from "react";
 import CampaignInfoSection from "./CampaignInfo";
-import SingleBlock from "./SingleBlock";
-import ViewsDetailBlock from "./ViewsDetailBlock";
+import SingleBlock from "./infoBlocks/SingleBlock";
+import ViewsDetailBlock from "./infoBlocks/ViewsDetailBlock";
 
 const CampaignInfoStats = ({ views, clicks }) => {
   const getViewsTotal = (counts) => {
