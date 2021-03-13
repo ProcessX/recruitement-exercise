@@ -26,7 +26,6 @@ const CampaignListing = () => {
   }, [pageIndex]);
 
   const changePage = (newPageIndex) => {
-    console.log(newPageIndex);
     setIndex(newPageIndex);
   };
 

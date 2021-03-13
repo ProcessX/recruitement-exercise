@@ -1,8 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const BtnBack = () => {
-  return <Link>Back</Link>;
+  let history = useHistory();
+
+  const goBack = () => {
+    history.goBack();
+  };
+
+  return <button onClick={goBack}>Back</button>;
 };
 
 export default BtnBack;

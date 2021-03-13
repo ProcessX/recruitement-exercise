@@ -10,7 +10,6 @@ import MainPageLayout from "../mainPageLayout/MainPageLayout";
 
 const CampaignDetails = () => {
   const [campaign, setCampaign] = useState({});
-  //const [campaignID, setCampaignID] = useState("");
 
   const APIURL =
     "https://proxistore-campaign-qof7m4cq5q-ew.a.run.app/campaigns/";
