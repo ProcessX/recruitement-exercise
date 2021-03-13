@@ -1,11 +1,23 @@
-import React from 'react';
+import React from "react";
 
-const PageNav = () => {
-    return (
-        <div className={'pageNav'}>
-            Page Nav
-        </div>
-    )
-}
+const PageNav = ({ pageIndex, changePage }) => {
+  return (
+    <div className={"pageNav"}>
+      <button
+        className={"btn btn--pageNav btn--pageNav--prev"}
+        onClick={() => changePage(pageIndex - 1)}
+      >
+        Previous
+      </button>
+      <p className={"pageNav__indicator"}>Page {pageIndex}</p>
+      <button
+        className={"btn btn--pageNav btn--pageNav--next"}
+        onClick={() => changePage(pageIndex + 1)}
+      >
+        Next
+      </button>
+    </div>
+  );
+};
 
-export default PageNav
+export default PageNav;

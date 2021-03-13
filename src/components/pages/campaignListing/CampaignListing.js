@@ -25,6 +25,11 @@ const CampaignListing = () => {
     fetchPage();
   }, [pageIndex]);
 
+  const changePage = (newPageIndex) => {
+    console.log(newPageIndex);
+    setIndex(newPageIndex);
+  };
+
   return (
     <MainPageLayout>
       <div className={"campaignListing"}>
@@ -34,7 +39,7 @@ const CampaignListing = () => {
           <div className={"campaignListing__tools"}>
             <Searchbar />
             <SortingParamSelector />
-            <PageNav />
+            <PageNav pageIndex={pageIndex} changePage={(i) => changePage(i)} />
           </div>
         </div>
         <CampaignList list={currentPage} />
