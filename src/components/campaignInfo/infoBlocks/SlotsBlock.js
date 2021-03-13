@@ -3,7 +3,7 @@ import InfoBlock from "./InfoBlock";
 
 const SlotsBlock = () => {
   return (
-    <InfoBlock title={"Slots"}>
+    <InfoBlock title={"Slots"} className={"slotsBlock"}>
       <p>Calendar</p>
     </InfoBlock>
   );

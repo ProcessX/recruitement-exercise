@@ -1,0 +1,18 @@
+@use '../../../lib/colors';
+@use '../../../lib/fonts';
+@use '../../../lib/mixin';
+
+.slotsBlock {
+}
+
+@include mixin.tablet {
+  .slotsBlock {
+    grid-column: 1/-1;
+  }
+}
+
+@include mixin.tablet-large {
+  .slotsBlock {
+    grid-column: 1/4;
+  }
+}

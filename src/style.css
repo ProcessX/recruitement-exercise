@@ -304,6 +304,16 @@ html {
     grid-column: 1/-1;
   }
 }
+@media (min-width: 768px) {
+  .slotsBlock {
+    grid-column: 1/-1;
+  }
+}
+@media (min-width: 960px) {
+  .slotsBlock {
+    grid-column: 1/4;
+  }
+}
 .campaign__info {
   display: grid;
 }

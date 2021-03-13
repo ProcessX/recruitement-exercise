@@ -5,6 +5,7 @@
 @use './infoBlocks/singleBlock';
 @use './campaignInfoGeneral';
 @use './campaignInfoStats';
+@use './campaignInfoDiffusion';
 
 .campaign__info {
   display: grid;
