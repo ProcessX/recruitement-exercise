@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import InfoBlock from "./InfoBlock";
 import { PieChart } from "react-minimal-pie-chart";
 import PieChartController from "./pieChartElem/PieChartController";
+import ViewsCounterList from "./pieChartElem/ViewsCounterList";
 
 const ViewsDetailBlock = ({ views }) => {
   const [viewsKey, setViewsKey] = useState(Object.keys(views)[0]);
@@ -22,6 +23,7 @@ const ViewsDetailBlock = ({ views }) => {
         keys={Object.keys(views)}
         changeKey={(key) => setViewsKey(key)}
       />
+      <ViewsCounterList counts={views[viewsKey].counts} />
       <PieChart
         data={getFormattedViewsData(views[viewsKey].counts)}
         lineWidth={20}
