@@ -1,12 +1,12 @@
 import React from "react";
-import SlotsColumn from "./SlotsColumn";
+import SlotsRow from "./SlotsRow";
 
-const slotsArray = ({ slots }) => {
-  const renderColumns = () => {
-    return Object.entries(slots).map((column, index) => {
+const slotsArray = ({ title, slots }) => {
+  const renderRows = () => {
+    return slots.map((row) => {
       return (
-        <li>
-          <SlotsColumn title={column[0]} />
+        <li className={"slots__row__el"} key={row[0]}>
+          <SlotsRow title={row[0]} slots={row[1]} />
         </li>
       );
     });
@@ -14,7 +14,7 @@ const slotsArray = ({ slots }) => {
 
   return (
     <div className={"slots__array"}>
-      <ul className={"slots__column__li"}>{renderColumns()}</ul>
+      <ul className={"slots__row__li"}>{renderRows()}</ul>
     </div>
   );
 };
