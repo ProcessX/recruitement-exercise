@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import InfoBlock from "./InfoBlock";
+import SlotsArray from "./slotsElem/SlotsArray";
 
-const SlotsBlock = ({ diffusion }) => {
-  const slotFormatting = (slot) => {
-    return null;
-  };
-
+const SlotsBlock = ({ slots }) => {
   return (
     <InfoBlock title={"Slots"} className={"slotsBlock"}>
-      <p>Calendar</p>
+      <SlotsArray slots={slots} />
     </InfoBlock>
   );
 };
