@@ -12,6 +12,7 @@ const CampaignInfoStats = ({ views, clicks }) => {
 
   return (
     <CampaignInfoSection title={"Stats"} classname={"stats"}>
+      <p>{views.expected.counts.MOBILE}</p>
       <SingleBlock
         title={"Expected views"}
         value={getViewsTotal(Object.values(views.expected.counts))}
@@ -19,7 +20,7 @@ const CampaignInfoStats = ({ views, clicks }) => {
       <SingleBlock title={"Real views"} value={"value"} />
       <SingleBlock title={"Unique visitors"} value={clicks.unique} />
       <SingleBlock title={"Visitor total"} value={clicks.count} />
-      <ViewsDetailBlock />
+      <ViewsDetailBlock views={views} />
     </CampaignInfoSection>
   );
 };
