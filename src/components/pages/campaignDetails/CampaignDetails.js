@@ -43,6 +43,12 @@ const CampaignDetails = () => {
     setCampaign(newCampaign);
   };
 
+  const addTarget = (value) => {
+    let newCampaign = { ...campaign };
+    newCampaign.targets.segments.push({ value: value });
+    setCampaign(newCampaign);
+  };
+
   const renderCampaignDetails = () => {
     if (Object.keys(campaign).length === 0 && campaign.constructor === Object) {
       return <p>Empty</p>;
@@ -52,6 +58,7 @@ const CampaignDetails = () => {
           <CampaignInfoGeneral
             campaign={campaign}
             deleteTarget={(value) => deleteTarget(value)}
+            addTarget={(value) => addTarget(value)}
           />
           <CampaignInfoStats
             views={campaign.statistics.views}

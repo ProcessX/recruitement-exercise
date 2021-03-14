@@ -4,7 +4,7 @@ import IdentifiersBlock from "./infoBlocks/IdentifiersBlock";
 import SingleBlock from "./infoBlocks/SingleBlock";
 import TargetsBlock from "./infoBlocks/TargetsBlock";
 
-const CampaignInfoGeneral = ({ campaign, deleteTarget }) => {
+const CampaignInfoGeneral = ({ campaign, deleteTarget, addTarget }) => {
   const getCampaignBudget = () => {
     return "Budget";
   };
@@ -23,6 +23,7 @@ const CampaignInfoGeneral = ({ campaign, deleteTarget }) => {
       <TargetsBlock
         targets={campaign.targets}
         deleteTarget={(value) => deleteTarget(value)}
+        addTarget={(value) => addTarget(value)}
       />
     </CampaignInfoSection>
   );
