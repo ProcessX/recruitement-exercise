@@ -20,7 +20,7 @@ const CampaignInfoGeneral = ({ campaign }) => {
           <SingleBlock title={"Budget"} value={getCampaignBudget()} />
         </div>
       </IdentifiersBlock>
-      <TargetsBlock />
+      <TargetsBlock targets={campaign.targets} />
     </CampaignInfoSection>
   );
 };

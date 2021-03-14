@@ -3,10 +3,10 @@ import InfoBlock from "./InfoBlock";
 import TargetList from "./targetsElem/TargetList";
 
 // eslint-disable-next-line react/prop-types
-const TargetsBlock = () => {
+const TargetsBlock = ({ targets }) => {
   return (
     <InfoBlock title={"Targets"}>
-      <TargetList />
+      <TargetList targets={targets} />
     </InfoBlock>
   );
 };
