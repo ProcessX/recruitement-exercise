@@ -27,10 +27,20 @@ const CampaignDetails = () => {
   };
 
   const updateSlot = (day, time) => {
-    let nextCampaign = { ...campaign };
-    nextCampaign.diffusion.slots.slots[day][time] = !nextCampaign.diffusion
-      .slots.slots[day][time];
-    setCampaign({ ...nextCampaign });
+    let newCampaign = { ...campaign };
+    newCampaign.diffusion.slots.slots[day][time] = !newCampaign.diffusion.slots
+      .slots[day][time];
+    setCampaign(newCampaign);
+  };
+
+  const deleteTarget = (value) => {
+    let newCampaign = { ...campaign };
+    newCampaign.targets.segments = newCampaign.targets.segments.filter(
+      (segment) => {
+        return segment["value"] !== value;
+      }
+    );
+    setCampaign(newCampaign);
   };
 
   const renderCampaignDetails = () => {
@@ -39,7 +49,10 @@ const CampaignDetails = () => {
     } else {
       return (
         <Fragment>
-          <CampaignInfoGeneral campaign={campaign} />
+          <CampaignInfoGeneral
+            campaign={campaign}
+            deleteTarget={(value) => deleteTarget(value)}
+          />
           <CampaignInfoStats
             views={campaign.statistics.views}
             clicks={campaign.statistics.clicks}

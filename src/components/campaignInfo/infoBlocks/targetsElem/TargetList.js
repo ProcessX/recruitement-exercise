@@ -1,13 +1,15 @@
 import React from "react";
 import Target from "./Target";
 
-const TargetList = ({ targets }) => {
+const TargetList = ({ targets, deleteTarget }) => {
   const renderList = () => {
-    console.log(targets);
     return targets.segments.map((target) => {
       return (
         <li key={target.value} className={"target__el"}>
-          <Target value={target.value} />
+          <Target
+            value={target.value}
+            deleteTarget={(value) => deleteTarget(value)}
+          />
         </li>
       );
     });
