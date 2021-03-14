@@ -17,7 +17,7 @@ const CampaignInfoDiffusion = ({ diffusion }) => {
         value={dateFormatting(diffusion.period.from)}
       />
       <SingleBlock title={"To"} value={dateFormatting(diffusion.period.to)} />
-      <SlotsBlock slots={diffusion.slots} />
+      <SlotsBlock slots={diffusion.slots.slots} />
     </CampaignInfo>
   );
 };
