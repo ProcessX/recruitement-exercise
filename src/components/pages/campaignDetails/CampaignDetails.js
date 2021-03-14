@@ -26,6 +26,13 @@ const CampaignDetails = () => {
       });
   };
 
+  const updateSlot = (day, time) => {
+    let nextCampaign = { ...campaign };
+    nextCampaign.diffusion.slots.slots[day][time] = !nextCampaign.diffusion
+      .slots.slots[day][time];
+    setCampaign({ ...nextCampaign });
+  };
+
   const renderCampaignDetails = () => {
     if (Object.keys(campaign).length === 0 && campaign.constructor === Object) {
       return <p>Empty</p>;
@@ -37,7 +44,10 @@ const CampaignDetails = () => {
             views={campaign.statistics.views}
             clicks={campaign.statistics.clicks}
           />
-          <CampaignInfoDiffusion diffusion={campaign.diffusion} />
+          <CampaignInfoDiffusion
+            updateSlot={(day, time) => updateSlot(day, time)}
+            diffusion={campaign.diffusion}
+          />
         </Fragment>
       );
     }

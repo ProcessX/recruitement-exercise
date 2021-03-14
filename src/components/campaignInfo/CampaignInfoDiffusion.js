@@ -3,9 +3,8 @@ import CampaignInfo from "./CampaignInfo";
 import SingleBlock from "./infoBlocks/SingleBlock";
 import SlotsBlock from "./infoBlocks/SlotsBlock";
 
-const CampaignInfoDiffusion = ({ diffusion }) => {
+const CampaignInfoDiffusion = ({ diffusion, updateSlot }) => {
   const dateFormatting = (date) => {
-    console.log("Get formatted date");
     const dateFormatted = new Date(date);
     return `${dateFormatted.getDay()} ${dateFormatted.getMonth()} ${dateFormatted.getFullYear()}`;
   };
@@ -17,7 +16,10 @@ const CampaignInfoDiffusion = ({ diffusion }) => {
         value={dateFormatting(diffusion.period.from)}
       />
       <SingleBlock title={"To"} value={dateFormatting(diffusion.period.to)} />
-      <SlotsBlock slots={diffusion.slots.slots} />
+      <SlotsBlock
+        slots={diffusion.slots.slots}
+        updateSlot={(day, slot) => updateSlot(day, slot)}
+      />
     </CampaignInfo>
   );
 };

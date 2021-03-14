@@ -1,11 +1,16 @@
 import React from "react";
+import Slot from "./Slot";
 
-const SlotsRow = ({ title, slots }) => {
+const SlotsRow = ({ title, slots, updateSlot }) => {
   const renderSlots = () => {
     return Object.entries(slots).map((brick) => {
       return (
         <li key={brick[0]} className={"row__brick__el"}>
-          <p>{`${brick[1]}`}</p>
+          <Slot
+            timeRange={brick[0]}
+            value={brick[1]}
+            updateSlot={(slot) => updateSlot(title, slot)}
+          />
         </li>
       );
     });
