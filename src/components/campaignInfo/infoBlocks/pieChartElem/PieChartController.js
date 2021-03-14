@@ -1,11 +1,15 @@
 import React, { Fragment } from "react";
 
-const PieChartController = ({ categories }) => {
+const PieChartController = ({ keys, changeKey }) => {
   const renderButtons = () => {
     return (
       <Fragment>
-        {categories.map((elem, index) => {
-          return <button key={elem}>{elem}</button>;
+        {keys.map((elem, index) => {
+          return (
+            <button key={elem} onClick={() => changeKey(elem)}>
+              {elem}
+            </button>
+          );
         })}
       </Fragment>
     );
