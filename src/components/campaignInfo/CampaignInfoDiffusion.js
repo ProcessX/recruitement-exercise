@@ -8,7 +8,7 @@ const CampaignInfoDiffusion = ({ diffusion }) => {
     <CampaignInfo title={"Diffusion"} classname={"diffusion"}>
       <SingleBlock title={"From"} value={"value"} />
       <SingleBlock title={"To"} value={"value"} />
-      <SlotsBlock />
+      <SlotsBlock diffusion={diffusion} />
     </CampaignInfo>
   );
 };
