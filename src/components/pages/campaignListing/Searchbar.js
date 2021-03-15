@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Searchbar = () => {
-    return (
-        <div className={'searchbar'}>
-            Searchbar
-        </div>
-    )
-}
+  return (
+    <div className={"searchbar"}>
+      <input type="test" placeholder="Search" />
+    </div>
+  );
+};
 
-export default Searchbar
+export default Searchbar;

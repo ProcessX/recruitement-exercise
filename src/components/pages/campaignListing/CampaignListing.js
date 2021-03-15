@@ -23,6 +23,8 @@ const CampaignListing = () => {
       params[param[0]] = param[1];
     });
 
+    if (!params.hasOwnProperty("page")) params["page"] = 1;
+
     setSearchParams({ ...params });
   };
 
@@ -60,7 +62,18 @@ const CampaignListing = () => {
       });
   };
 
+  const changeSearchParams = (newParams) => {
+    console.log(newParams);
+    let updatedParams = { ...searchParams };
+    Object.entries(newParams).forEach((param) => {
+      updatedParams[param[0]] = param[1];
+    });
+    setSearchParams({ ...updatedParams });
+    console.log("Change params");
+  };
+
   const changePage = (newPageIndex) => {
+    changeSearchParams({ page: newPageIndex });
     setIndex(newPageIndex);
   };
 
@@ -73,7 +86,12 @@ const CampaignListing = () => {
           <div className={"campaignListing__tools"}>
             <Searchbar />
             <SortingParamSelector />
-            <PageNav pageIndex={pageIndex} changePage={(i) => changePage(i)} />
+            <PageNav
+              pageIndex={searchParams.page}
+              changePage={(pageIndex) =>
+                changeSearchParams({ page: pageIndex })
+              }
+            />
           </div>
         </div>
         <CampaignList list={currentPage} />

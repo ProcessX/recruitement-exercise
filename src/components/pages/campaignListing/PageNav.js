@@ -5,14 +5,14 @@ const PageNav = ({ pageIndex, changePage }) => {
     <div className={"pageNav"}>
       <button
         className={"btn btn--pageNav btn--pageNav--prev"}
-        onClick={() => changePage(pageIndex - 1)}
+        onClick={() => changePage(parseInt(pageIndex) - 1)}
       >
         Previous
       </button>
       <p className={"pageNav__indicator"}>Page {pageIndex}</p>
       <button
         className={"btn btn--pageNav btn--pageNav--next"}
-        onClick={() => changePage(pageIndex + 1)}
+        onClick={() => changePage(parseInt(pageIndex) + 1)}
       >
         Next
       </button>
