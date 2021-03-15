@@ -1,0 +1,20 @@
+@use '../../../lib/mixin';
+@use '../../../lib/colors';
+@use '../../../lib/fonts';
+
+.campaignListing__tools {
+  background-color: red;
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+@include mixin.smaller-than-tablet {
+  .campaignListing__tools {
+    background-color: aquamarine;
+
+    * {
+      width: 100%;
+    }
+  }
+}

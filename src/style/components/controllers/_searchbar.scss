@@ -1,0 +1,17 @@
+@use '../../lib/colors';
+@use '../../lib/mixin';
+@use '../../lib/fonts';
+
+.controller--searchbar {
+  input {
+    font-size: inherit;
+    font-family: "Poppins", sans-serif;
+    background-color: transparent;
+    border: none;
+    pointer-events: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

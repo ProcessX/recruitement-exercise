@@ -128,11 +128,6 @@ html {
   margin-top: 0;
 }
 
-.campaignListing__tools {
-  min-width: 100%;
-  display: flex;
-}
-
 @media (min-width: 768px) {
   .campaignListing .campaignListing__head {
     display: flex;
@@ -244,6 +239,21 @@ html {
     justify-self: end;
   }
 }
+.campaignListing__tools {
+  background-color: red;
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .campaignListing__tools {
+    background-color: aquamarine;
+  }
+  .campaignListing__tools * {
+    width: 100%;
+  }
+}
 .campaignThumbnail__li {
   list-style: none;
   margin: 0;
@@ -341,6 +351,34 @@ html {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.controller--searchbar input {
+  font-size: inherit;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border: none;
+  pointer-events: none;
+}
+.controller--searchbar input:focus {
+  outline: none;
+}
+
+.controller {
+  font-size: 1rem;
+  height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 1.25rem;
+  border: solid 1px black;
+  display: flex;
+  box-sizing: border-box;
+}
+.controller * {
+  align-self: center;
+  max-width: 100%;
+}
+.controller:hover {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;

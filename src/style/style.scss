@@ -4,6 +4,7 @@
 @use './components/btn/btn';
 @use './components/campaignList/campaignList';
 @use './components/campaignInfo/campaignInfo';
+@use './components/controllers/controller';
 
 body {
   margin: 0;

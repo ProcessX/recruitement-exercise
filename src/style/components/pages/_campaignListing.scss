@@ -16,11 +16,6 @@
   }
 }
 
-.campaignListing__tools {
-  min-width: 100%;
-  display: flex;
-}
-
 @include mixin.tablet {
   .campaignListing {
     .campaignListing__head {
