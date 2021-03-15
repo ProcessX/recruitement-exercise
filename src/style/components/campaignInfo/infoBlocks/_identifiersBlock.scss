@@ -14,16 +14,29 @@
     font-weight: 600;
     color: colors.$gray-2;
   }
+
+  .campaign__info {
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
 }
 
 @include mixin.tablet {
   .identifierBlock {
     grid-column: 1/-1;
+
+    .campaign__info {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 
 @include mixin.tablet-large {
   .identifierBlock {
     grid-column: 1/4;
+    .campaign__info {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }

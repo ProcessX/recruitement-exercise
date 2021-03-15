@@ -14,7 +14,7 @@ const CampaignInfoGeneral = ({ campaign, deleteTarget, addTarget }) => {
       <IdentifiersBlock>
         <h4 className={"campaign__name"}>{campaign.details.name}</h4>
         <p className={"campaign__id"}>{campaign.id.value}</p>
-        <div className={"info"}>
+        <div className={"campaign__info"}>
           <SingleBlock title={"Status"} value={campaign.details.status} />
           <SingleBlock title={"Source"} value={campaign.details.source} />
           <SingleBlock title={"Budget"} value={getCampaignBudget()} />

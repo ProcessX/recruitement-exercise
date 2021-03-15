@@ -19,6 +19,7 @@ const SlotsRow = ({ title, slots, updateSlot }) => {
   return (
     <div className={"slots__row"}>
       <h4 className={"row__title"}>{title}</h4>
+
       <ul className={"row__brick__li"}>{renderSlots()}</ul>
     </div>
   );

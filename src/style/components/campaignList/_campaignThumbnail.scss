@@ -13,6 +13,8 @@ $thumbnail-padding: 1rem;
   border: solid $thumbnail-border-thickness white;
   padding: $thumbnail-padding;
   text-decoration: none;
+  -webkit-box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
 
   * {
     margin: 0;

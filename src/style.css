@@ -95,7 +95,7 @@ html {
 }
 .mainPageLayout {
   min-height: 100vh;
-  background-color: #768890;
+  background-color: #f5f6f8;
 }
 .mainPageLayout .mainPageLayout__page {
   width: 100%;
@@ -161,6 +161,8 @@ html {
   border: solid 2px white;
   padding: 1rem;
   text-decoration: none;
+  -webkit-box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
 }
 .campaignThumbnail * {
   margin: 0;
@@ -277,6 +279,9 @@ html {
   padding: 1rem;
   border-radius: 1rem;
   max-width: 100%;
+  -webkit-box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
+  box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
+  align-self: start;
 }
 .info__block .info__block__title {
   margin-top: 0;
@@ -303,15 +308,26 @@ html {
   font-weight: 600;
   color: #d8d8d8;
 }
+.identifierBlock .campaign__info {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
 
 @media (min-width: 768px) {
   .identifierBlock {
     grid-column: 1/-1;
   }
+  .identifierBlock .campaign__info {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 @media (min-width: 960px) {
   .identifierBlock {
     grid-column: 1/4;
+  }
+  .identifierBlock .campaign__info {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .piechart__display {
