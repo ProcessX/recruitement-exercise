@@ -21,6 +21,8 @@ const CampaignListing = () => {
     error: 2000,
   };
 
+  const statusParams = ["draft", "running", "cancelled", "finished"];
+
   const triggerSearch = () => {
     console.log("Trigger Search");
     setPageLoading({ loading: true });
@@ -125,7 +127,7 @@ const CampaignListing = () => {
             <Searchbar
               searchName={(name) => changeSearchParams({ search: name })}
             />
-            <SortingParamSelector />
+            <SortingParamSelector title={"Status"} paramList={statusParams} />
             <PageNav
               pageIndex={searchParams.page}
               changePage={(pageIndex) =>
@@ -134,7 +136,9 @@ const CampaignListing = () => {
             />
           </div>
         </div>
-        {renderCampaignList()}
+        {
+          //renderCampaignList()
+        }
       </div>
     </MainPageLayout>
   );

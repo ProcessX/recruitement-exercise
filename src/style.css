@@ -362,6 +362,54 @@ html {
   outline: none;
 }
 
+.controller--paramSelector {
+  background-color: green;
+  position: relative;
+}
+.controller--paramSelector .paramSelector__dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  background-color: red;
+  width: auto;
+  padding: calc(1rem - 0.25rem) 1rem 1rem 1rem;
+  border-radius: 0.5rem;
+  cursor: auto;
+  display: flex;
+  flex-direction: column;
+}
+.controller--paramSelector .paramSelector__dropdown .paramSelector__reset {
+  cursor: pointer;
+}
+
+.param__li {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 calc(1rem - 0.25rem) 0;
+}
+.param__li .param__el {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+.param__li .param__el:last-child {
+  margin-bottom: 0;
+}
+.param__li .param__el .param__checkbox {
+  margin-right: 0.5rem;
+  height: 1rem;
+  width: 1rem;
+  background-color: blue;
+}
+.param__li .param__el .param__checkbox--checked {
+  background-color: gray;
+}
+.param__li .param__el .param__label {
+  margin: 0;
+  line-height: 1em;
+}
+
 .controller {
   font-size: 1rem;
   height: 2.5rem;

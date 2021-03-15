@@ -2,6 +2,7 @@
 @use '../../lib/mixin';
 @use '../../lib/fonts';
 @use './searchbar';
+@use './paramSelector';
 
 $controller-height: 2.5rem;
 
