@@ -127,7 +127,9 @@ const CampaignListing = () => {
             <Searchbar
               searchName={(name) => changeSearchParams({ search: name })}
             />
-            <SortingParamSelector title={"Status"} paramList={statusParams} />
+            {
+              //<SortingParamSelector title={"Status"} paramList={statusParams} />
+            }
             <PageNav
               pageIndex={searchParams.page}
               changePage={(pageIndex) =>

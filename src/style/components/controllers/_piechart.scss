@@ -3,7 +3,6 @@
 @use '../../lib/fonts';
 
 .controller.controller--piechart {
-  background-color: gray;
   padding: 0;
   overflow: hidden;
 
@@ -14,13 +13,16 @@
     font-size: 1rem;
     padding: 0 1em;
     flex-grow: 1;
+    font-weight: 600;
+    color: colors.$gray-3;
 
     &:hover {
-      background-color: green;
+      background-color: colors.$gray-2;
     }
 
     &--active {
-      background-color: red;
+      background-color: colors.$gray-3;
+      color: white;
       pointer-events: none;
     }
   }

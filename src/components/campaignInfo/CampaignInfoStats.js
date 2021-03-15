@@ -16,7 +16,10 @@ const CampaignInfoStats = ({ views, clicks }) => {
         title={"Expected views"}
         value={getViewsTotal(Object.values(views.expected.counts))}
       />
-      <SingleBlock title={"Real views"} value={"value"} />
+      <SingleBlock
+        title={"Real views"}
+        value={getViewsTotal(Object.values(views.effective.counts))}
+      />
       <SingleBlock title={"Unique visitors"} value={clicks.unique} />
       <SingleBlock title={"Visitor total"} value={clicks.count} />
       <ViewsDetailBlock views={views} />

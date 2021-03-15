@@ -6,7 +6,7 @@ import TargetsBlock from "./infoBlocks/TargetsBlock";
 
 const CampaignInfoGeneral = ({ campaign, deleteTarget, addTarget }) => {
   const getCampaignBudget = () => {
-    return "Budget";
+    return `${campaign.details.budget.value} ${campaign.details.budget.currency}`;
   };
 
   return (

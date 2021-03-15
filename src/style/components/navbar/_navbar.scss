@@ -1,5 +1,6 @@
 @use '../../lib/mixin';
 @use '../../lib/fonts';
+@use '../../lib/colors';
 
 $navbar-height-mobile: 4rem;
 $tab-icon-size-mobile: 2.5rem;
@@ -26,9 +27,12 @@ $tab-icon-size-desktop: 1.5rem;
 
       &__icon {
         display: inline-block;
-        background-color: blue;
-        text-indent: 100%;
-        overflow: hidden;
+
+        svg {
+          height: 100%;
+          width: 100%;
+          fill: colors.$gray-3;
+        }
       }
     }
   }
@@ -83,7 +87,7 @@ $tab-icon-size-desktop: 1.5rem;
 @include mixin.desktop {
   .navbar {
     padding: 1rem;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .navbar__menu .tab__li {
@@ -99,6 +103,7 @@ $tab-icon-size-desktop: 1.5rem;
         border-radius: 0.25rem;
 
         &__text {
+          color: colors.$gray-3;
         }
 
         &__icon {
@@ -110,7 +115,7 @@ $tab-icon-size-desktop: 1.5rem;
 
         &:not(.tab--active) {
           &:hover {
-            background-color: gray;
+            background-color: colors.$gray-1;
           }
         }
       }

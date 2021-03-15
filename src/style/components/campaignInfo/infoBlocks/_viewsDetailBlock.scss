@@ -8,8 +8,14 @@
   .views__counter__li {
   }
 
-  .piechart__display {
-    max-width: 360px;
+  .info__block__content {
+    .controller {
+      margin-bottom: 2rem;
+    }
+
+    .piechart__display {
+      max-width: 360px;
+    }
   }
 }
 

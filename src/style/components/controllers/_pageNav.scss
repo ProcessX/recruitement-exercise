@@ -6,6 +6,7 @@
   padding: 0;
   overflow: hidden;
   justify-content: space-between;
+  color: colors.$gray-3;
 
   .btn {
     height: 100%;
@@ -16,7 +17,7 @@
     padding: 0 1em;
 
     &:hover {
-      background-color: aqua;
+      background-color: colors.$gray-2;
     }
 
     &--pageNav--prev {
@@ -45,6 +46,7 @@
       svg {
         height: 100%;
         width: 100%;
+        fill: colors.$gray-3;
       }
     }
   }

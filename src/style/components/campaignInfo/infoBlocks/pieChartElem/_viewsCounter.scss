@@ -15,16 +15,19 @@
   .counter__plateform {
     grid-column: 2/3;
     grid-row: 1/2;
-    justify-self: start;
+    justify-self: start !important;
     font-size: fonts.$font-size-4;
     font-weight: 700;
+    color: colors.$gray-3;
   }
 
   .counter__value {
     grid-column: 2/3;
     grid-row: 2/3;
-    justify-self: start;
+    justify-self: start !important;
     line-height: 80%;
+    font-weight: 600;
+    color: colors.$gray-2;
   }
 
   .counter__percentage {

@@ -18,10 +18,15 @@
   pointer-events: none;
 
   .piechart__message {
-    margin-top: 0;
+    margin: 0;
+    font-size: fonts.$font-size-2;
+    color: colors.$gray-2;
   }
 
   .piechart__total {
     margin: 0;
+    font-size: fonts.$font-size-5;
+    font-weight: 700;
+    color: colors.$gray-3;
   }
 }

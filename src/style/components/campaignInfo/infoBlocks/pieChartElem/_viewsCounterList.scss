@@ -11,6 +11,22 @@
   .views__counter__el {
     margin-bottom: 1rem;
 
+    &--mobile {
+      color: colors.$orange-1;
+    }
+
+    &--desktop {
+      color: colors.$orange-2;
+    }
+
+    &--tablet {
+      color: colors.$orange-3;
+    }
+
+    &--other {
+      color: colors.$orange-4;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }

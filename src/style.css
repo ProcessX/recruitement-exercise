@@ -24,9 +24,11 @@ html {
 }
 .navbar__menu .tab__li .tab__el .tab__icon {
   display: inline-block;
-  background-color: blue;
-  text-indent: 100%;
-  overflow: hidden;
+}
+.navbar__menu .tab__li .tab__el .tab__icon svg {
+  height: 100%;
+  width: 100%;
+  fill: #768890;
 }
 
 @media (max-width: 1259px) {
@@ -70,7 +72,7 @@ html {
 @media (min-width: 1260px) {
   .navbar {
     padding: 1rem;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .navbar__menu .tab__li .tab__el {
@@ -83,6 +85,9 @@ html {
     padding: 11.8352921838px;
     border-radius: 0.25rem;
   }
+  .navbar__menu .tab__li .tab__el .tab__text {
+    color: #768890;
+  }
   .navbar__menu .tab__li .tab__el .tab__icon {
     height: 1.5rem;
     width: 1.5rem;
@@ -90,7 +95,7 @@ html {
     margin-right: 11.8352921838px;
   }
   .navbar__menu .tab__li .tab__el .tab:not(.tab--active):hover {
-    background-color: gray;
+    background-color: #f5f6f8;
   }
 }
 .mainPageLayout {
@@ -136,16 +141,17 @@ html {
   }
 }
 .btn.btn--rectangle {
-  background-color: gray;
+  background-color: #bdbdbd;
   height: 2.5rem;
   padding: 0 1rem;
   font-weight: 600;
   text-transform: uppercase;
   border-radius: 0.25rem;
   border: none;
+  color: #768890;
 }
 .btn.btn--rectangle:hover {
-  background-color: black;
+  background-color: #768890;
   color: white;
 }
 
@@ -157,13 +163,17 @@ html {
   align-items: center;
   font-size: 15.652173913px;
   font-weight: 600;
+  color: #bdbdbd;
 }
 .btn--back .btn__svg {
   transform: rotate(90deg);
   margin-right: 0.5em;
 }
+.btn--back .btn__svg svg {
+  fill: #768890;
+}
 .btn--back:hover {
-  color: red;
+  color: #768890;
 }
 
 .btn--options {
@@ -197,7 +207,7 @@ html {
   position: relative;
   background-color: white;
   border-radius: 0.5rem;
-  border: solid 2px white;
+  border: solid 1px white;
   padding: 1rem;
   text-decoration: none;
   -webkit-box-shadow: 5px 0px 18px 5px rgba(0, 0, 0, 0.06);
@@ -289,6 +299,7 @@ html {
   padding-top: 1rem;
   background-color: #f5f6f8;
   position: relative;
+  z-index: 500;
 }
 .campaignListing__tools .controller {
   margin-right: 1rem;
@@ -429,10 +440,15 @@ html {
   pointer-events: none;
 }
 .piechart__info .piechart__message {
-  margin-top: 0;
+  margin: 0;
+  font-size: 20.7px;
+  color: #bdbdbd;
 }
 .piechart__info .piechart__total {
   margin: 0;
+  font-size: 31.4821125px;
+  font-weight: 700;
+  color: #768890;
 }
 
 .views__counter {
@@ -447,15 +463,18 @@ html {
 .views__counter .counter__plateform {
   grid-column: 2/3;
   grid-row: 1/2;
-  justify-self: start;
+  justify-self: start !important;
   font-size: 27.37575px;
   font-weight: 700;
+  color: #768890;
 }
 .views__counter .counter__value {
   grid-column: 2/3;
   grid-row: 2/3;
-  justify-self: start;
+  justify-self: start !important;
   line-height: 80%;
+  font-weight: 600;
+  color: #bdbdbd;
 }
 .views__counter .counter__percentage {
   justify-self: end;
@@ -471,11 +490,26 @@ html {
 .views__counter__li .views__counter__el {
   margin-bottom: 1rem;
 }
+.views__counter__li .views__counter__el--mobile {
+  color: #f7ca7c;
+}
+.views__counter__li .views__counter__el--desktop {
+  color: #f7a63e;
+}
+.views__counter__li .views__counter__el--tablet {
+  color: #f76a00;
+}
+.views__counter__li .views__counter__el--other {
+  color: #df4e00;
+}
 .views__counter__li .views__counter__el:last-child {
   margin-bottom: 0;
 }
 
-.viewsDetailBlock .piechart__display {
+.viewsDetailBlock .info__block__content .controller {
+  margin-bottom: 2rem;
+}
+.viewsDetailBlock .info__block__content .piechart__display {
   max-width: 360px;
 }
 
@@ -573,6 +607,7 @@ html {
 .campaign__info {
   display: grid;
   max-width: 100%;
+  margin-top: 4rem;
 }
 .campaign__info .title {
   font-size: 36.204429375px;
@@ -599,8 +634,14 @@ html {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.controller.controller--searchbar {
+  color: #768890;
+}
 .controller.controller--searchbar .controller__svg {
   margin-right: 0.5rem;
+}
+.controller.controller--searchbar .controller__svg svg {
+  fill: #768890;
 }
 .controller.controller--searchbar input {
   font-size: inherit;
@@ -673,6 +714,7 @@ html {
   padding: 0;
   overflow: hidden;
   justify-content: space-between;
+  color: #768890;
 }
 .controller.controller--pageNav .btn {
   height: 100%;
@@ -683,7 +725,7 @@ html {
   padding: 0 1em;
 }
 .controller.controller--pageNav .btn:hover {
-  background-color: aqua;
+  background-color: #bdbdbd;
 }
 .controller.controller--pageNav .btn--pageNav--prev {
   border-right: inherit;
@@ -707,6 +749,7 @@ html {
 .controller.controller--pageNav .btn .pageNav__svg svg {
   height: 100%;
   width: 100%;
+  fill: #768890;
 }
 .controller.controller--pageNav .pageNav__indicator {
   min-width: 5em;
@@ -738,7 +781,6 @@ html {
 }
 
 .controller.controller--piechart {
-  background-color: gray;
   padding: 0;
   overflow: hidden;
 }
@@ -749,12 +791,15 @@ html {
   font-size: 1rem;
   padding: 0 1em;
   flex-grow: 1;
+  font-weight: 600;
+  color: #768890;
 }
 .controller.controller--piechart .btn--piechart:hover {
-  background-color: green;
+  background-color: #bdbdbd;
 }
 .controller.controller--piechart .btn--piechart--active {
-  background-color: red;
+  background-color: #768890;
+  color: white;
   pointer-events: none;
 }
 
@@ -763,7 +808,7 @@ html {
   height: 2.5rem;
   padding: 0 1rem;
   border-radius: 1.25rem;
-  border: solid 1px black;
+  border: solid 1px #768890;
   display: flex;
   box-sizing: border-box;
 }

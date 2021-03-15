@@ -2,7 +2,7 @@ import React from "react";
 import { PieChart } from "react-minimal-pie-chart";
 
 const PieChartDisplay = ({ counts }) => {
-  const COLORS = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00"];
+  const COLORS = ["#f7ca7c", "#f7a63e", "#f76a00", "#df4e00"];
   const chartThickness = 36;
 
   const viewsTotal = Object.values(counts).reduce((accumulator, count) => {
