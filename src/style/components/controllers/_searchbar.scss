@@ -2,7 +2,7 @@
 @use '../../lib/mixin';
 @use '../../lib/fonts';
 
-.controller--searchbar {
+.controller.controller--searchbar {
   input {
     font-size: inherit;
     font-family: "Poppins", sans-serif;

@@ -2,7 +2,7 @@ import React from "react";
 
 const PageNav = ({ pageIndex, changePage }) => {
   return (
-    <div className={"pageNav"}>
+    <div className={"controller controller--pageNav"}>
       <button
         className={"btn btn--pageNav btn--pageNav--prev"}
         onClick={() => changePage(parseInt(pageIndex) - 1)}

@@ -1,0 +1,34 @@
+@use '../../lib/colors';
+@use '../../lib/mixin';
+@use '../../lib/fonts';
+
+.controller.controller--pageNav {
+  padding: 0;
+  overflow: hidden;
+  justify-content: space-between;
+
+  .btn {
+    height: 100%;
+    border: none;
+    display: block;
+    background-color: inherit;
+    outline: none;
+
+    &:hover {
+      background-color: aqua;
+    }
+
+    &--pageNav--prev {
+      border-right: inherit;
+    }
+
+    &--pageNav--next {
+      border-left: inherit;
+    }
+  }
+
+  .pageNav__indicator {
+    text-align: center;
+    flex-grow: 2;
+  }
+}

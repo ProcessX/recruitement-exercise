@@ -240,7 +240,6 @@ html {
   }
 }
 .campaignListing__tools {
-  background-color: red;
   display: flex;
   max-width: 100%;
   flex-wrap: wrap;
@@ -351,14 +350,14 @@ html {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.controller--searchbar input {
+.controller.controller--searchbar input {
   font-size: inherit;
   font-family: "Poppins", sans-serif;
   background-color: transparent;
   border: none;
   pointer-events: none;
 }
-.controller--searchbar input:focus {
+.controller.controller--searchbar input:focus {
   outline: none;
 }
 
@@ -411,6 +410,32 @@ html {
 .param__li .param__el .param__label {
   margin: 0;
   line-height: 1em;
+}
+
+.controller.controller--pageNav {
+  padding: 0;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.controller.controller--pageNav .btn {
+  height: 100%;
+  border: none;
+  display: block;
+  background-color: inherit;
+  outline: none;
+}
+.controller.controller--pageNav .btn:hover {
+  background-color: aqua;
+}
+.controller.controller--pageNav .btn--pageNav--prev {
+  border-right: inherit;
+}
+.controller.controller--pageNav .btn--pageNav--next {
+  border-left: inherit;
+}
+.controller.controller--pageNav .pageNav__indicator {
+  text-align: center;
+  flex-grow: 2;
 }
 
 .controller {
