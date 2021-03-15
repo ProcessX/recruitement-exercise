@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
+import { ReactComponent as Dots } from "../../assets/icons/dots.svg";
 
 const ThumbnailOptions = () => {
-    return (
-        <div className={'thumbnail__options'}>
-            <button className={'btn btn--options'}>Options</button>
-        </div>
-    )
-}
+  const toggleOptions = (e) => {
+    e.stopPropagation();
+    console.log("CLick");
+  };
 
-export default ThumbnailOptions
+  return (
+    <div className={"btn btn--options thumbnail__options"}>
+      <button className={"btn btn--options"} onClick={toggleOptions}>
+        <Dots />
+      </button>
+    </div>
+  );
+};
+
+export default ThumbnailOptions;

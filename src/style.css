@@ -166,6 +166,19 @@ html {
   color: red;
 }
 
+.btn--options {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: transparent;
+}
+.btn--options svg {
+  height: 100%;
+  width: 100%;
+  fill: #bdbdbd;
+}
+
 .btn {
   cursor: pointer;
 }
@@ -195,7 +208,7 @@ html {
 }
 .campaignThumbnail .campaign__status {
   background-color: #f5f6f8;
-  color: #d8d8d8;
+  color: #bdbdbd;
   padding: 0.25rem 1rem;
   display: inline-block;
   border-radius: 1rem;
@@ -317,7 +330,7 @@ html {
   margin-top: 0;
   font-size: 20.7px;
   font-weight: 600;
-  color: #d8d8d8;
+  color: #bdbdbd;
 }
 
 .singleBlock .singleInfo {
@@ -336,7 +349,7 @@ html {
 .identifierBlock .campaign__id {
   font-size: 1rem;
   font-weight: 600;
-  color: #d8d8d8;
+  color: #bdbdbd;
 }
 .identifierBlock .campaign__info {
   display: grid;
@@ -563,7 +576,7 @@ html {
 }
 .campaign__info .title {
   font-size: 36.204429375px;
-  color: #d8d8d8;
+  color: #bdbdbd;
 }
 .campaign__info .info__content {
   display: grid;
