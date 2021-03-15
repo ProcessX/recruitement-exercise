@@ -8,6 +8,7 @@ import CampaignList from "../../campaignList/CampaignList";
 
 const CampaignListing = () => {
   const [pageIndex, setIndex] = useState(1);
+  const [pageMaxNbr, setPageMaxNbr] = useState(1);
   const [currentPage, setCurrentPage] = useState(new Array(0));
 
   const APIURL =
