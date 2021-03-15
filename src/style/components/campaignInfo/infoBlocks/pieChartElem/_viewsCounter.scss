@@ -1,0 +1,35 @@
+@use '../../../../lib/colors';
+@use '../../../../lib/fonts';
+@use '../../../../lib/mixin';
+
+.views__counter {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto auto;
+  column-gap: 1rem;
+
+  * {
+    margin: 0;
+  }
+
+  .counter__plateform {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: start;
+    font-size: fonts.$font-size-4;
+    font-weight: 700;
+  }
+
+  .counter__value {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    justify-self: start;
+    line-height: 80%;
+  }
+
+  .counter__percentage {
+    justify-self: end;
+    font-size: fonts.$font-size-4;
+    font-weight: 700;
+  }
+}

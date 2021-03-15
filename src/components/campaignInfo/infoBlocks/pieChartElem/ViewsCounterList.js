@@ -15,7 +15,10 @@ const ViewsCounterList = ({ counts }) => {
       <Fragment>
         {Object.entries(counts).map((elem) => {
           return (
-            <li key={elem[0]}>
+            <li
+              key={elem[0]}
+              className={`views__counter__el views__counter__el--${elem[0].toLowerCase()}`}
+            >
               <ViewsCounter
                 plateform={elem[0]}
                 value={elem[1]}

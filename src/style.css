@@ -313,11 +313,6 @@ html {
     grid-column: 1/4;
   }
 }
-html {
-  font-size: 18px;
-  font-family: "Poppins", sans-serif;
-}
-
 .piechart__display {
   display: grid;
   align-items: center;
@@ -339,6 +334,51 @@ html {
   margin: 0;
 }
 
+.views__counter {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: auto auto;
+  column-gap: 1rem;
+}
+.views__counter * {
+  margin: 0;
+}
+.views__counter .counter__plateform {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: start;
+  font-size: 27.37575px;
+  font-weight: 700;
+}
+.views__counter .counter__value {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  justify-self: start;
+  line-height: 80%;
+}
+.views__counter .counter__percentage {
+  justify-self: end;
+  font-size: 27.37575px;
+  font-weight: 700;
+}
+
+.views__counter__li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.views__counter__li .views__counter__el {
+  margin-bottom: 1rem;
+}
+.views__counter__li .views__counter__el:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .viewsDetailBlock {
+    grid-column: 1/-1;
+  }
+}
 @media (min-width: 768px) {
   .slotsBlock {
     grid-column: 1/-1;
