@@ -374,9 +374,31 @@ html {
   margin-bottom: 0;
 }
 
+.viewsDetailBlock .piechart__display {
+  max-width: 360px;
+}
+
 @media (min-width: 768px) {
   .viewsDetailBlock {
     grid-column: 1/-1;
+  }
+  .viewsDetailBlock .info__block__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .viewsDetailBlock .info__block__content *:not(.title) {
+    justify-self: center;
+  }
+  .viewsDetailBlock .info__block__content .piechart__display {
+    max-width: 80%;
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .viewsDetailBlock .info__block__content .views__counter__li {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-self: center;
   }
 }
 @media (min-width: 768px) {
