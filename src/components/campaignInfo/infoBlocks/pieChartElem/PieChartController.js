@@ -1,12 +1,18 @@
 import React, { Fragment } from "react";
 
-const PieChartController = ({ keys, changeKey }) => {
+const PieChartController = ({ currentKey, keys, changeKey }) => {
   const renderButtons = () => {
     return (
       <Fragment>
         {keys.map((elem, index) => {
           return (
-            <button key={elem} onClick={() => changeKey(elem)}>
+            <button
+              className={`btn btn--piechart${
+                currentKey === elem ? " btn--piechart--active" : ""
+              }`}
+              key={elem}
+              onClick={() => changeKey(elem)}
+            >
               {elem}
             </button>
           );
@@ -15,7 +21,9 @@ const PieChartController = ({ keys, changeKey }) => {
     );
   };
 
-  return <div className={"pieChart__controller"}>{renderButtons()}</div>;
+  return (
+    <div className={"controller controller--piechart"}>{renderButtons()}</div>
+  );
 };
 
 export default PieChartController;

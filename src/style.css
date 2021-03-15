@@ -649,6 +649,27 @@ html {
   outline: none;
 }
 
+.controller.controller--piechart {
+  background-color: gray;
+  padding: 0;
+  overflow: hidden;
+}
+.controller.controller--piechart .btn--piechart {
+  height: 100%;
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 0 1em;
+  flex-grow: 1;
+}
+.controller.controller--piechart .btn--piechart:hover {
+  background-color: green;
+}
+.controller.controller--piechart .btn--piechart--active {
+  background-color: red;
+  pointer-events: none;
+}
+
 .controller {
   font-size: 1rem;
   height: 2.5rem;

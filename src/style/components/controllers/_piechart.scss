@@ -1,0 +1,27 @@
+@use '../../lib/colors';
+@use '../../lib/mixin';
+@use '../../lib/fonts';
+
+.controller.controller--piechart {
+  background-color: gray;
+  padding: 0;
+  overflow: hidden;
+
+  .btn--piechart {
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    padding: 0 1em;
+    flex-grow: 1;
+
+    &:hover {
+      background-color: green;
+    }
+
+    &--active {
+      background-color: red;
+      pointer-events: none;
+    }
+  }
+}

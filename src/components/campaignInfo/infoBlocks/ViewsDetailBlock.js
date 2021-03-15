@@ -11,6 +11,7 @@ const ViewsDetailBlock = ({ views }) => {
   return (
     <InfoBlock className={"viewsDetailBlock"} title={"Views Detail"}>
       <PieChartController
+        currentKey={viewsKey}
         keys={Object.keys(views)}
         changeKey={(key) => setViewsKey(key)}
       />
