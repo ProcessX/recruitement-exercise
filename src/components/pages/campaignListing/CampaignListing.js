@@ -133,12 +133,11 @@ const CampaignListing = () => {
               changePage={(pageIndex) =>
                 changeSearchParams({ page: pageIndex })
               }
+              maxPageIndex={pageMaxNbr}
             />
           </div>
         </div>
-        {
-          //renderCampaignList()
-        }
+        {renderCampaignList()}
       </div>
     </MainPageLayout>
   );
