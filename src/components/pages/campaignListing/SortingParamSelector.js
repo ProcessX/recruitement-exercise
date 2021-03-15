@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import { ReactComponent as Arrow } from "../../../assets/icons/arrow-down-sign-to-navigate.svg";
 
 const SortingParamSelector = ({ title, paramList }) => {
   const [params, setParams] = useState(() => {
@@ -89,6 +90,13 @@ const SortingParamSelector = ({ title, paramList }) => {
       onClick={toggleDropdown}
     >
       {renderTitle()}
+      <span
+        className={`controller__svg${
+          dropdownOpen ? " controller__svg--active" : ""
+        }`}
+      >
+        <Arrow />
+      </span>
       {renderParamDropdown()}
     </div>
   );

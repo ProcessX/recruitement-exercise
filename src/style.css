@@ -149,8 +149,34 @@ html {
   color: white;
 }
 
+.btn--back {
+  background: none;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-size: 15.652173913px;
+  font-weight: 600;
+}
+.btn--back .btn__svg {
+  transform: rotate(90deg);
+  margin-right: 0.5em;
+}
+.btn--back:hover {
+  color: red;
+}
+
 .btn {
   cursor: pointer;
+}
+.btn__svg {
+  height: 1em;
+  width: 1em;
+  display: block;
+}
+.btn__svg svg {
+  height: 100%;
+  width: 100%;
 }
 
 .campaignThumbnail {
@@ -347,14 +373,24 @@ html {
 .target__value {
   margin: 0;
 }
+.target .target__value {
+  margin-right: 0.5em;
+}
 .target .btn {
-  width: 1em;
-  max-width: 1em;
-  height: 1em;
-  max-height: 1em;
-  overflow: hidden;
+  background-color: transparent;
+  border: none;
+  width: 0.63em;
+  max-width: 0.63em;
+  height: 0.63em;
+  max-height: 0.63em;
   padding: 0;
-  margin-left: 0.25em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.target .btn svg {
+  height: 100%;
+  width: 100%;
 }
 
 .target__li {
@@ -550,6 +586,9 @@ html {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.controller.controller--searchbar .controller__svg {
+  margin-right: 0.5rem;
+}
 .controller.controller--searchbar input {
   font-size: inherit;
   font-family: "Poppins", sans-serif;
@@ -562,14 +601,19 @@ html {
 }
 
 .controller--paramSelector {
-  background-color: green;
   position: relative;
+}
+.controller--paramSelector .controller__svg {
+  margin-left: 0.5em;
+}
+.controller--paramSelector .controller__svg--active {
+  transform: rotate(180deg);
 }
 .controller--paramSelector .paramSelector__dropdown {
   position: absolute;
   top: calc(100% + 0.5rem);
   left: 0;
-  background-color: red;
+  background-color: white;
   width: auto;
   padding: calc(1rem - 0.25rem) 1rem 1rem 1rem;
   border-radius: 0.5rem;
@@ -623,6 +667,7 @@ html {
   display: block;
   background-color: inherit;
   outline: none;
+  padding: 0 1em;
 }
 .controller.controller--pageNav .btn:hover {
   background-color: aqua;
@@ -630,8 +675,25 @@ html {
 .controller.controller--pageNav .btn--pageNav--prev {
   border-right: inherit;
 }
+.controller.controller--pageNav .btn--pageNav--prev .pageNav__svg {
+  transform: rotate(90deg);
+}
 .controller.controller--pageNav .btn--pageNav--next {
   border-left: inherit;
+}
+.controller.controller--pageNav .btn--pageNav--next .pageNav__svg {
+  transform: rotate(-90deg);
+}
+.controller.controller--pageNav .btn .pageNav__svg {
+  display: block;
+  height: 1rem;
+  width: 1rem;
+  max-width: 1rem;
+  max-height: 1rem;
+}
+.controller.controller--pageNav .btn .pageNav__svg svg {
+  height: 100%;
+  width: 100%;
 }
 .controller.controller--pageNav .pageNav__indicator {
   min-width: 5em;
@@ -646,6 +708,9 @@ html {
 
 .controller.controller--targetNew {
   margin-top: 2rem;
+}
+.controller.controller--targetNew .controller__svg {
+  margin-right: 0.5em;
 }
 .controller.controller--targetNew input {
   font-size: inherit;
@@ -688,6 +753,17 @@ html {
   border: solid 1px black;
   display: flex;
   box-sizing: border-box;
+}
+.controller__svg {
+  height: 1em;
+  width: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.controller__svg svg {
+  height: 100%;
+  width: 100%;
 }
 .controller * {
   align-self: center;

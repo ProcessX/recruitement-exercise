@@ -6,14 +6,21 @@ $param-checkbox-size: 1rem;
 $param-el-padding: 0.25rem;
 
 .controller--paramSelector {
-  background-color: green;
   position: relative;
+
+  .controller__svg {
+    margin-left: 0.5em;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
 
   .paramSelector__dropdown {
     position: absolute;
     top: calc(100% + #{0.5rem});
     left: 0;
-    background-color: red;
+    background-color: white;
     width: auto;
     padding: calc(#{1rem} - #{$param-el-padding}) 1rem 1rem 1rem;
     border-radius: 0.5rem;

@@ -18,6 +18,19 @@ $controller-height: 2.5rem;
   display: flex;
   box-sizing: border-box;
 
+  &__svg {
+    height: 1em;
+    width: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
   * {
     align-self: center;
     max-width: 100%;

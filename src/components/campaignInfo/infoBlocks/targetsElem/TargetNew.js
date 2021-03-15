@@ -1,4 +1,5 @@
 import React, { createRef, useState } from "react";
+import { ReactComponent as Plus } from "../../../../assets/icons/plus.svg";
 
 const TargetNew = ({ targets, addTarget }) => {
   const [inputContent, setInputContent] = useState("");
@@ -37,6 +38,9 @@ const TargetNew = ({ targets, addTarget }) => {
 
   return (
     <div className={"controller controller--targetNew"} onClick={focusInput}>
+      <span className={"controller__svg"}>
+        <Plus />
+      </span>
       <input
         type="test"
         placeholder="Add Target"

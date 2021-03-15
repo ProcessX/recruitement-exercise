@@ -1,5 +1,17 @@
 @use './btnRectangle';
+@use './btnBack';
 
-.btn{
-    cursor: pointer;
+.btn {
+  cursor: pointer;
+
+  &__svg {
+    height: 1em;
+    width: 1em;
+    display: block;
+
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }

@@ -4,6 +4,11 @@
 
 .controller.controller--targetNew {
   margin-top: 2rem;
+
+  .controller__svg {
+    margin-right: 0.5em;
+  }
+
   input {
     font-size: inherit;
     font-family: "Poppins", sans-serif;

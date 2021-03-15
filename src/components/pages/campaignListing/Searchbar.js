@@ -1,4 +1,5 @@
 import React, { createRef } from "react";
+import { ReactComponent as SearchIcon } from "../../../assets/icons/search.svg";
 
 const Searchbar = ({ searchName }) => {
   const searchDelay = 500;
@@ -19,6 +20,9 @@ const Searchbar = ({ searchName }) => {
       className={"controller controller--searchbar"}
       onClick={() => focusInput()}
     >
+      <span className={"controller__svg"}>
+        <SearchIcon />
+      </span>
       <input
         type="test"
         placeholder="Search"

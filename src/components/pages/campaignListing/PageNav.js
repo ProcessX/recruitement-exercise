@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactComponent as Arrow } from "../../../assets/icons/arrow-down-sign-to-navigate.svg";
 
 const PageNav = ({ pageIndex, changePage, maxPageIndex }) => {
   const disableBtnNext = () => {
@@ -23,7 +24,9 @@ const PageNav = ({ pageIndex, changePage, maxPageIndex }) => {
         }`}
         onClick={() => changePageIndex(parseInt(pageIndex) - 1)}
       >
-        Previous
+        <span className={"pageNav__svg"}>
+          <Arrow />
+        </span>
       </button>
       <p className={"pageNav__indicator"}>Page {pageIndex}</p>
       <button
@@ -32,7 +35,9 @@ const PageNav = ({ pageIndex, changePage, maxPageIndex }) => {
         }`}
         onClick={() => changePageIndex(parseInt(pageIndex) + 1)}
       >
-        Next
+        <span className={"pageNav__svg"}>
+          <Arrow />
+        </span>
       </button>
     </div>
   );
