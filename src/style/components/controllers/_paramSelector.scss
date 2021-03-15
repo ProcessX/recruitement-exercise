@@ -23,6 +23,9 @@ $param-el-padding: 0.25rem;
 
     .paramSelector__reset {
       cursor: pointer;
+      line-height: 81%;
+      width: auto;
+      align-self: flex-end;
     }
   }
 }

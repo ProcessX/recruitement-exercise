@@ -380,6 +380,9 @@ html {
 }
 .controller--paramSelector .paramSelector__dropdown .paramSelector__reset {
   cursor: pointer;
+  line-height: 81%;
+  width: auto;
+  align-self: flex-end;
 }
 
 .param__li {
