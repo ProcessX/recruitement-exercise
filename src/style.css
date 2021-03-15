@@ -243,18 +243,22 @@ html {
 }
 .campaignListing__tools {
   display: flex;
+  width: 100%;
   max-width: 100%;
   flex-wrap: wrap;
+  margin-top: 4rem;
+  padding-top: 1rem;
+  background-color: #f5f6f8;
+  position: relative;
+}
+.campaignListing__tools .controller {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.campaignListing__tools .controller:last-child {
+  margin: 0 0 0 auto;
 }
 
-@media (max-width: 767px) {
-  .campaignListing__tools {
-    background-color: aquamarine;
-  }
-  .campaignListing__tools * {
-    width: 100%;
-  }
-}
 .campaignThumbnail__li {
   list-style: none;
   margin: 0;
@@ -630,8 +634,14 @@ html {
   border-left: inherit;
 }
 .controller.controller--pageNav .pageNav__indicator {
-  text-align: center;
-  flex-grow: 2;
+  min-width: 5em;
+  padding: 0 0 0 1em;
+  margin: 0;
+  vertical-align: middle;
+  cursor: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .controller.controller--targetNew {

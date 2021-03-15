@@ -4,16 +4,25 @@
 
 .campaignListing__tools {
   display: flex;
+  width: 100%;
   max-width: 100%;
   flex-wrap: wrap;
+  margin-top: 4rem;
+  padding-top: 1rem;
+  background-color: colors.$gray-1;
+  position: relative;
+
+  .controller {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .controller:last-child {
+    margin: 0 0 0 auto;
+  }
 }
 
 @include mixin.smaller-than-tablet {
   .campaignListing__tools {
-    background-color: aquamarine;
-
-    * {
-      width: 100%;
-    }
   }
 }

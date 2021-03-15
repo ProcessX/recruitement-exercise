@@ -24,6 +24,7 @@ const Searchbar = ({ searchName }) => {
         placeholder="Search"
         onChange={onChange}
         ref={inputRef}
+        size="14"
       />
     </div>
   );
