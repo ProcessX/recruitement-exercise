@@ -1,0 +1,19 @@
+@use '../../lib/colors';
+@use '../../lib/fonts';
+@use '../../lib/mixin';
+
+.controller.controller--targetNew {
+  margin-top: 2rem;
+  input {
+    font-size: inherit;
+    font-family: "Poppins", sans-serif;
+    background-color: transparent;
+    border: none;
+    pointer-events: none;
+    max-width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

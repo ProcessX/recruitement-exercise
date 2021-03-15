@@ -330,6 +330,37 @@ html {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+.target {
+  display: flex;
+  height: 1.5rem;
+  border-radius: 0.75rem;
+  border: solid 1px black;
+  padding: 0 0.5rem;
+  align-items: center;
+  margin: 0 0.5rem 0.5rem 0;
+  font-size: 13.6105860113px;
+}
+.target__value {
+  margin: 0;
+}
+.target .btn {
+  width: 1em;
+  max-width: 1em;
+  height: 1em;
+  max-height: 1em;
+  overflow: hidden;
+  padding: 0;
+  margin-left: 0.25em;
+}
+
+.target__li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .piechart__display {
   display: grid;
   align-items: center;
@@ -601,6 +632,21 @@ html {
 .controller.controller--pageNav .pageNav__indicator {
   text-align: center;
   flex-grow: 2;
+}
+
+.controller.controller--targetNew {
+  margin-top: 2rem;
+}
+.controller.controller--targetNew input {
+  font-size: inherit;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  border: none;
+  pointer-events: none;
+  max-width: 100%;
+}
+.controller.controller--targetNew input:focus {
+  outline: none;
 }
 
 .controller {

@@ -4,10 +4,6 @@ import TargetList from "./targetsElem/TargetList";
 import TargetNew from "./targetsElem/TargetNew";
 
 const TargetsBlock = ({ targets, deleteTarget, addTarget }) => {
-  const testAddTarget = (value) => {
-    console.log(value);
-  };
-
   return (
     <InfoBlock title={"Targets"}>
       <TargetList

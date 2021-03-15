@@ -20,6 +20,9 @@ const TargetNew = ({ targets, addTarget }) => {
       }
     }
   };
+  const focusInput = () => {
+    inputRef.current.focus();
+  };
 
   const isTargetAlreadyExisting = () => {
     for (let i = 0; i < targets.segments.length; i++) {
@@ -33,13 +36,14 @@ const TargetNew = ({ targets, addTarget }) => {
   };
 
   return (
-    <div className={"target__new"}>
+    <div className={"controller controller--targetNew"} onClick={focusInput}>
       <input
         type="test"
         placeholder="Add Target"
         onChange={onInputChange}
         onKeyDown={(e) => onKeyDown(e)}
         ref={inputRef}
+        size="10"
       />
     </div>
   );
