@@ -313,11 +313,32 @@ html {
     grid-column: 1/4;
   }
 }
-@media (min-width: 768px) {
-  .viewsDetailBlock {
-    grid-column: 1/-1;
-  }
+html {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
 }
+
+.piechart__display {
+  display: grid;
+  align-items: center;
+}
+.piechart__display * {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.piechart__info {
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+.piechart__info .piechart__message {
+  margin-top: 0;
+}
+.piechart__info .piechart__total {
+  margin: 0;
+}
+
 @media (min-width: 768px) {
   .slotsBlock {
     grid-column: 1/-1;

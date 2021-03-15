@@ -1,0 +1,27 @@
+@use '../../../../lib/colors';
+@use '../../../../lib/fonts';
+@use '../../../../lib/mixin';
+
+.piechart__display {
+  display: grid;
+  align-items: center;
+
+  * {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.piechart__info {
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+
+  .piechart__message {
+    margin-top: 0;
+  }
+
+  .piechart__total {
+    margin: 0;
+  }
+}
