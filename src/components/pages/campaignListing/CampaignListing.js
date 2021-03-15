@@ -70,11 +70,7 @@ const CampaignListing = () => {
     });
     setSearchParams({ ...updatedParams });
     console.log("Change params");
-  };
-
-  const changePage = (newPageIndex) => {
-    changeSearchParams({ page: newPageIndex });
-    setIndex(newPageIndex);
+    console.log(updatedParams);
   };
 
   return (
@@ -84,7 +80,9 @@ const CampaignListing = () => {
           <h1 className={"title title--page"}>Campaign Listing</h1>
           <BtnRectangle text={"Add campaign"} />
           <div className={"campaignListing__tools"}>
-            <Searchbar />
+            <Searchbar
+              searchName={(name) => changeSearchParams({ search: name })}
+            />
             <SortingParamSelector />
             <PageNav
               pageIndex={searchParams.page}
