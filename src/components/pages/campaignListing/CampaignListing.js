@@ -10,21 +10,55 @@ const CampaignListing = () => {
   const [pageIndex, setIndex] = useState(1);
   const [pageMaxNbr, setPageMaxNbr] = useState(1);
   const [currentPage, setCurrentPage] = useState(new Array(0));
+  const [searchParams, setSearchParams] = useState({});
 
-  const APIURL =
-    "https://proxistore-campaign-qof7m4cq5q-ew.a.run.app/campaigns?page=";
+  const pageSize = 10;
 
-  const fetchPage = () => {
-    fetch(`${APIURL}${pageIndex}`)
-      .then((r) => r.json())
-      .then((result) => {
-        setCurrentPage(result.result);
-      });
+  let initSearchParams = () => {
+    let urlParams = [...new URLSearchParams(window.location.search)];
+    let params = {
+      size: pageSize,
+    };
+    urlParams.forEach((param) => {
+      params[param[0]] = param[1];
+    });
+
+    setSearchParams({ ...params });
   };
 
   useEffect(() => {
-    fetchPage();
-  }, [pageIndex]);
+    if (
+      Object.keys(searchParams).length === 0 &&
+      searchParams.constructor === Object
+    ) {
+      initSearchParams();
+    } else {
+      fetchPage();
+    }
+  }, [searchParams]);
+
+  const APIURL =
+    "https://proxistore-campaign-qof7m4cq5q-ew.a.run.app/campaigns";
+
+  const getSearchURL = () => {
+    let searchURL = APIURL + "?";
+    Object.entries(searchParams).forEach((param, index) => {
+      if (index > 0) {
+        searchURL += "&";
+      }
+      searchURL += `${param[0]}=${param[1]}`;
+    });
+    return searchURL;
+  };
+
+  const fetchPage = () => {
+    fetch(getSearchURL())
+      .then((r) => r.json())
+      .then((result) => {
+        if (result.total !== pageMaxNbr) setPageMaxNbr(result.total);
+        setCurrentPage(result.result);
+      });
+  };
 
   const changePage = (newPageIndex) => {
     setIndex(newPageIndex);
