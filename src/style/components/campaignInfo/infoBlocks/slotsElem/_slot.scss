@@ -1,0 +1,23 @@
+@use '../../../../lib/colors';
+@use '../../../../lib/fonts';
+@use '../../../../lib/mixin';
+
+.slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+
+  .slot__state {
+    height: 50%;
+    width: 50%;
+    max-height: 50%;
+    max-width: 50%;
+    overflow: hidden;
+  }
+
+  &--checked {
+    background-color: green;
+  }
+}

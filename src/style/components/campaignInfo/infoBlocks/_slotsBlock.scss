@@ -1,8 +1,11 @@
 @use '../../../lib/colors';
 @use '../../../lib/fonts';
 @use '../../../lib/mixin';
+@use './slotsElem/slotsArray';
 
 .slotsBlock {
+  max-width: 100%;
+  position: relative;
 }
 
 @include mixin.tablet {

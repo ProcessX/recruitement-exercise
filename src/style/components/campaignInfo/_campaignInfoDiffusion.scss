@@ -2,3 +2,7 @@
 @use '../../lib/fonts';
 @use '../../lib/mixin';
 @use './infoBlocks/slotsBlock';
+
+.campaignInfo {
+  width: 100%;
+}

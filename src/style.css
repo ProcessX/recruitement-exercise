@@ -276,6 +276,7 @@ html {
   background-color: white;
   padding: 1rem;
   border-radius: 1rem;
+  max-width: 100%;
 }
 .info__block .info__block__title {
   margin-top: 0;
@@ -401,6 +402,60 @@ html {
     align-self: center;
   }
 }
+.slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+.slot .slot__state {
+  height: 50%;
+  width: 50%;
+  max-height: 50%;
+  max-width: 50%;
+  overflow: hidden;
+}
+.slot--checked {
+  background-color: green;
+}
+
+.slots__row {
+  display: flex;
+  background-color: red;
+}
+.slots__row .row__title {
+  width: 8em;
+}
+.slots__row .row__brick__li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  background-color: blue;
+}
+.slots__row .row__brick__li .row__brick__el {
+  flex-basis: 0;
+  flex: 1 1 0px;
+}
+
+.slots__array {
+  max-width: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.slots__array .slots__row__li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slotsBlock {
+  max-width: 100%;
+  position: relative;
+}
+
 @media (min-width: 768px) {
   .slotsBlock {
     grid-column: 1/-1;
@@ -411,8 +466,13 @@ html {
     grid-column: 1/4;
   }
 }
+.campaignInfo {
+  width: 100%;
+}
+
 .campaign__info {
   display: grid;
+  max-width: 100%;
 }
 .campaign__info .title {
   font-size: 36.204429375px;
@@ -422,6 +482,7 @@ html {
   display: grid;
   row-gap: 1rem;
   column-gap: 1rem;
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
