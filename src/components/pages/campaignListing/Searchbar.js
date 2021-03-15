@@ -5,7 +5,6 @@ const Searchbar = ({ searchName }) => {
   const searchDelay = 500;
 
   const onChange = (e) => {
-    console.log(e.target.value);
     clearTimeout(searchTimer);
     searchTimer = setTimeout(() => searchName(e.target.value), searchDelay);
   };

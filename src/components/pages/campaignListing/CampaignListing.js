@@ -7,12 +7,31 @@ import PageNav from "./PageNav";
 import CampaignList from "../../campaignList/CampaignList";
 
 const CampaignListing = () => {
-  const [pageIndex, setIndex] = useState(1);
   const [pageMaxNbr, setPageMaxNbr] = useState(1);
   const [currentPage, setCurrentPage] = useState(new Array(0));
   const [searchParams, setSearchParams] = useState({});
+  const [pageLoading, setPageLoading] = useState({
+    loading: false,
+    error: false,
+  });
 
   const pageSize = 10;
+  const loadingDelay = {
+    normal: 1000,
+    error: 2000,
+  };
+
+  const triggerSearch = () => {
+    console.log("Trigger Search");
+    setPageLoading({ loading: true });
+  };
+
+  useEffect(() => {
+    if (pageLoading.loading) {
+      if (pageLoading.error) setTimeout(() => fetchPage(), loadingDelay.error);
+      else setTimeout(() => fetchPage(), loadingDelay.normal);
+    }
+  }, [pageLoading]);
 
   let initSearchParams = () => {
     let urlParams = [...new URLSearchParams(window.location.search)];
@@ -35,7 +54,7 @@ const CampaignListing = () => {
     ) {
       initSearchParams();
     } else {
-      fetchPage();
+      setPageLoading({ loading: true });
     }
   }, [searchParams]);
 
@@ -43,7 +62,7 @@ const CampaignListing = () => {
     "https://proxistore-campaign-qof7m4cq5q-ew.a.run.app/campaigns";
 
   const getSearchURL = () => {
-    let searchURL = APIURL + "?";
+    let searchURL = "?";
     Object.entries(searchParams).forEach((param, index) => {
       if (index > 0) {
         searchURL += "&";
@@ -54,23 +73,46 @@ const CampaignListing = () => {
   };
 
   const fetchPage = () => {
-    fetch(getSearchURL())
-      .then((r) => r.json())
-      .then((result) => {
-        if (result.total !== pageMaxNbr) setPageMaxNbr(result.total);
-        setCurrentPage(result.result);
+    let searchURL = getSearchURL();
+    window.history.replaceState("", "Campaigns", `/campaigns${searchURL}`);
+    fetch(APIURL + searchURL)
+      .then((response) => {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
+          return response.json();
+        }
+      })
+      .then((response) => {
+        setPageLoading({ loading: false, error: false });
+        if (response.total !== pageMaxNbr) setPageMaxNbr(response.total);
+        setCurrentPage(response.result);
+      })
+      .catch((error) => {
+        setPageLoading({ loading: false, error: true });
+        console.log(error);
       });
   };
 
   const changeSearchParams = (newParams) => {
-    console.log(newParams);
     let updatedParams = { ...searchParams };
     Object.entries(newParams).forEach((param) => {
       updatedParams[param[0]] = param[1];
     });
     setSearchParams({ ...updatedParams });
-    console.log("Change params");
-    console.log(updatedParams);
+  };
+
+  const renderCampaignList = () => {
+    if (pageLoading.error) {
+      console.log("ERROR !");
+      return <p>Error</p>;
+    } else {
+      if (pageLoading.loading) {
+        return <p>Loading</p>;
+      } else {
+        return <CampaignList list={currentPage} />;
+      }
+    }
   };
 
   return (
@@ -92,7 +134,7 @@ const CampaignListing = () => {
             />
           </div>
         </div>
-        <CampaignList list={currentPage} />
+        {renderCampaignList()}
       </div>
     </MainPageLayout>
   );
