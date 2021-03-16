@@ -4,7 +4,6 @@ import Home from "./components/pages/home/Home";
 import Help from "./components/pages/help/Help";
 import CampaignListing from "./components/pages/campaignListing/CampaignListing";
 import CampaignDetails from "./components/pages/campaignDetails/CampaignDetails";
-import Navbar from "./components/navbar/Navbar";
 
 function App() {
   return (
