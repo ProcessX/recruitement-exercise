@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Proxistore Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here is my final take on the test for Proxistore : a two-paged app created with React and SASS.
 
 ## Available Scripts
 
