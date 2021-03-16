@@ -11,16 +11,16 @@ function App() {
         <Home />
       </Route>
 
-      <Route exact path="/campaigns">
+      <Route exact path={process.env.PUBLIC_URL + "/campaigns"}>
         <CampaignListing />
       </Route>
 
-      <Route exact path="/campaign-details">
+      <Route exact path={process.env.PUBLIC_URL + "/campaign-details"}>
         <CampaignDetails />
       </Route>
 
       <Route>
-        <h1>4044</h1>
+        <h1>40445</h1>
       </Route>
     </Switch>
   );
