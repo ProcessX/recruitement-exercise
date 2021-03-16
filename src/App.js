@@ -1,7 +1,6 @@
 import "./style.css";
 import { Switch, Route } from "react-router-dom";
 import Home from "./components/pages/home/Home";
-import Help from "./components/pages/help/Help";
 import CampaignListing from "./components/pages/campaignListing/CampaignListing";
 import CampaignDetails from "./components/pages/campaignDetails/CampaignDetails";
 
@@ -10,10 +9,6 @@ function App() {
     <Switch>
       <Route exact path="/">
         <Home />
-      </Route>
-
-      <Route exact path="/help">
-        <Help />
       </Route>
 
       <Route exact path="/campaigns">
