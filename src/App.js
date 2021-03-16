@@ -7,7 +7,7 @@ import CampaignDetails from "./components/pages/campaignDetails/CampaignDetails"
 function App() {
   return (
     <Switch>
-      <Route exact path="/">
+      <Route exact path={process.env.PUBLIC_URL + "/"}>
         <Home />
       </Route>
 
