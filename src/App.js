@@ -7,20 +7,20 @@ import CampaignDetails from "./components/pages/campaignDetails/CampaignDetails"
 function App() {
   return (
     <Switch>
-      <Route exact path={"/"}>
+      <Route exact path="/">
         <Home />
       </Route>
 
-      <Route exact path={"/campaigns"}>
+      <Route exact path="/campaigns">
         <CampaignListing />
       </Route>
 
-      <Route exact path={"/campaign-details"}>
+      <Route exact path="/campaign-details">
         <CampaignDetails />
       </Route>
 
       <Route>
-        <h1>40445</h1>
+        <h1>404</h1>
       </Route>
     </Switch>
   );
