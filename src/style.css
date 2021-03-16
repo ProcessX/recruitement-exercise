@@ -349,7 +349,7 @@ html {
   font-weight: 700;
   color: #768890;
   text-align: right;
-  padding-right: 2rem;
+  padding-right: 1rem;
 }
 
 .identifierBlock .campaign__name {
@@ -541,25 +541,48 @@ html {
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
   cursor: pointer;
+  pointer-events: all;
 }
 .slot .slot__state {
-  height: 50%;
-  width: 50%;
-  max-height: 50%;
-  max-width: 50%;
-  overflow: hidden;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  background-color: #bdbdbd;
+  border-radius: 0.25rem;
+}
+.slot .slot__state svg {
+  opacity: 0;
+  height: 120%;
+  width: 120%;
+  align-self: center;
+}
+.slot:hover .slot__state {
+  background-color: #768890;
 }
 .slot--checked {
-  background-color: green;
+  background-color: #768890;
+}
+.slot--checked .slot__state {
+  background-color: white;
+}
+.slot--checked .slot__state svg {
+  opacity: 1;
+  fill: #768890;
+}
+.slot--checked:hover .slot__state {
+  background-color: #bdbdbd;
 }
 
 .slots__row {
   display: flex;
-  background-color: red;
 }
 .slots__row .row__title {
-  width: 8em;
+  width: 7em;
+  min-width: 7em;
+  padding-left: 1em;
+  color: #768890;
 }
 .slots__row .row__brick__li {
   list-style: none;
@@ -567,24 +590,37 @@ html {
   margin: 0;
   flex-grow: 1;
   display: flex;
-  background-color: blue;
+  background-color: #f5f6f8;
 }
 .slots__row .row__brick__li .row__brick__el {
   flex-basis: 0;
   flex: 1 1 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slots__array {
-  max-width: 200px;
-  overflow: hidden;
+  max-width: 100%;
+  overflow: scroll;
   position: relative;
+}
+.slots__array__title {
+  color: #768890;
 }
 .slots__array .slots__row__li {
   list-style: none;
   padding: 0;
   margin: 0;
+  background-color: #bdbdbd;
+  min-width: 1000px;
 }
 
+@media (min-width: 1260px) {
+  .slots__array {
+    overflow: auto;
+  }
+}
 .slotsBlock {
   max-width: 100%;
   position: relative;
@@ -593,11 +629,6 @@ html {
 @media (min-width: 768px) {
   .slotsBlock {
     grid-column: 1/-1;
-  }
-}
-@media (min-width: 960px) {
-  .slotsBlock {
-    grid-column: 1/4;
   }
 }
 .campaignInfo {

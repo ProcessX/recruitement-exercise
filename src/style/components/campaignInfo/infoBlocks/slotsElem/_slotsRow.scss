@@ -5,10 +5,12 @@
 
 .slots__row {
   display: flex;
-  background-color: red;
 
   .row__title {
-    width: 8em;
+    width: 7em;
+    min-width: 7em;
+    padding-left: 1em;
+    color: colors.$gray-3;
   }
 
   .row__brick__li {
@@ -17,11 +19,14 @@
     margin: 0;
     flex-grow: 1;
     display: flex;
-    background-color: blue;
+    background-color: colors.$gray-1;
 
     .row__brick__el {
       flex-basis: 0;
       flex: 1 1 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
