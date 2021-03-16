@@ -2,69 +2,32 @@
 
 Here is my final take on the test for Proxistore : a two-paged app created with React and SASS.
 
-## Available Scripts
+## What works
 
-In the project directory, you can run:
+The app displays data from the API, with a page regrouping campaign thumbnails and another giving details about a selected campaign.
 
-### `npm start`
+## What doesn't work
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The "Add Campaign" button doesn't do anything but it made sense for me to put it there.
+The "Options" button on the campaign thumbnail doesn't work because I lacked time, but again it made sense to have it if needed.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## What kinda works
 
-### `npm test`
+The styling is still a work-in-progress, obviously.
+The searchbar only allows for a search by ID. The possibility to search a campaign using its name could have been an option but it would make more sense to add this feature to the API instead of brute-force it into the app.
+As it is some campaign's details can be changed (timeslots, target keys) but the update get lost when the page is reloaded.
+Also the timeslot block isn't fully responsive yet.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### To run the app locally
 
-### `npm run build`
+As any React app you can run the project using "npm start" in the terminal.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### For an online version
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The app is running on Heroku at this URL :
+https://proxistore-app.herokuapp.com/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Thank you for taking the time of reviewing my work.
+If you think it achieved the level you are looking for, feel free to contact me via mail at contact@lucasgeshef.be
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Lucas Geshef
